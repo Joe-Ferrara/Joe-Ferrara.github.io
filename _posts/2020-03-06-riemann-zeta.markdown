@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "Intro to L-functions I"
+title:  "Introducion to L-functions I"
 ---
 
-# The Riemann-Zeta Function
+# The Riemann zeta Function
 
-Number theory is one of the oldest areas of mathematics, and at the heart of number is the study of prime numbers. A prime number is a whole number larger than $1$ such that the only positive whole numbers that divide it evenly are $1$ and itself. For example $5$ is prime number, but $6$ is not because $2$ divides $6$. The first few prime numbers are
+Number theory is one of the oldest areas of mathematics, and at the heart of number theory is the study of prime numbers. A prime number is a whole number larger than $1$ such that the only positive whole numbers that divide it evenly are $1$ and itself. For example $5$ is prime number, but $6$ is not because $2$ divides $6$. The first few prime numbers are
 
 $$2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,\ldots.$$
 
@@ -13,13 +13,13 @@ Euclid in about 300 B.C.E. was the first to show that there are infinitely many 
 
 One reason prime numbers are of interest in the study of numbers is that prime numbers are the atoms of whole numbers. The fundamental theorem of arithmetic, also proved by Euclid, says that every every whole number greater that $1$ can be written uniquely as a product of prime numbers. For example $6$ from before is written as a product of prime numbers as $6 = 2\cdot 3$. A few other examples are $12 = 2^2\cdot3$, $869 = 11\cdot 79$, and $7735 = 5\cdot 7\cdot 13\cdot 17$.
 
-The infinitude of primes and the fundamental theorem of arithmetic lead to two natural questions: How are the prime numbers distributed among all the whole numbers? And do other number systems exist with their own prime numbers and a fundamental theorem of arithmetic? The study of $L$-functions is central in addressing and studying these two questions in modern number theory. In these series of posts, I will explain some of the roles $L$-functions play classically in addressing the aforemented questions, introduce the modern perspective on $L$-functions, and explain how my research fits into the modern picture. In this first post I will consider the first $L$-function, known today as the Riemann-Zeta function and denoted $\zeta(s)$. Because of the technical nature of the subject, the posts will become more technical as we go along. I'll tried to begin each post with an informal discussion of the ideas that will appear.
+The infinitude of primes and the fundamental theorem of arithmetic lead to two natural questions: How are the prime numbers distributed among all the whole numbers? And do other number systems exist with their own prime numbers and a fundamental theorem of arithmetic? The study of $L$-functions is central in addressing and studying these two questions in modern number theory. In this series of posts, I will explain some of the roles $L$-functions play classically in addressing the aforementioned questions, introduce the modern perspective on $L$-functions, and explain how my research fits into the modern picture. In this first post I will consider the first $L$-function, known today as the Riemann zeta function and denoted $\zeta(s)$. Because of the technical nature of the subject, the posts will become more technical as we go along. I will begin each post with an informal discussion of the ideas that will appear.
 
-The Riemann-Zeta function, $\zeta(s)$, was first studied by Leonhard Euler in the 1700s. He gave its definition as the infinite series
+The Riemann zeta function, $\zeta(s)$, was first studied by Leonhard Euler in the 1700s. He gave its definition as the infinite series
 
 $$\zeta(s) = \sum_{n = 1}^\infty\frac{1}{n^s}$$
 
-where $s$ is a real variable greater than $1$. Note that if we plug in $s = 1$, we get the harmonic series that diverges. 
+where $s$ is a real variable greater than $1$. Note that if we plug in $s = 1$, we get the harmonic series that diverges.
 
 Euler used this divergence at $s=1$ to give a new proof of the infinitude of primes, exhibiting some of the interesting properties of $\zeta(s)$. His argument was the following: Using unique factorization of the integers in the denominators of the sum defining $\zeta(s)$, we have
 
@@ -59,7 +59,7 @@ $$\infty = \sum_{\substack{p\\\text{prime}}}\frac{1}{p}$$
 
 which implies that there are infinitely many prime numbers since if there were finitely many then the above sum could not be infinite.
 
-Euler's proof is the tip of the iceberg in the relation of $\zeta(s)$ to the prime numbers. Another example is the relationship between the Riemann-Zeta function and the distribution of primes.  One can observe that there are fewer primes amongst large numbers than amongst the small ones. For example in the list of primes above, the second half of the list has more jumps of size $6$ than the first half of the list. Gauss in the late 1700s and early 1800s studied this phenomenon and made precise statements about the rate at which the prime numbers become more spread out. He conjectured that asymptotically the number of prime numbers less than $x$ is approximately
+Euler's proof is the tip of the iceberg in the relation of $\zeta(s)$ to the prime numbers. Another important example is the relationship between the Riemann zeta function and the distribution of primes.  One can observe that there are fewer primes amongst large numbers than amongst the small ones. For example in the list of primes above, the second half of the list has more jumps of size $6$ than the first half of the list. Gauss in the late 1700s and early 1800s studied this phenomenon and made precise statements about the rate at which the prime numbers become more spread out. He conjectured that asymptotically the number of prime numbers less than $x$ is approximately
 
 $$\frac{x}{\log x}.$$
 
@@ -67,31 +67,33 @@ Since $\log x$ grows slower than $x$, this matches the observation that primes b
 
 $$\lim_{x\to\infty}\frac{\pi(x)}{\frac{x}{\log x}} = 1.$$
 
-Gauss' conjecture is true, and leads to the question of whether or not there is a function that better approximates the growth of the prime numbers than $\frac{x}{\log(x)}$. 
+Gauss' conjecture is true, and it turns out that there is a better function to use than $\frac{x}{\log(x)}$ to approximate $\pi(x)$. This function is know as $\text{Li}(x)$, and defined by the integral
 
-Currently the function mathematicians consider in approximating $\pi(x)$ is 
+$$\text{Li}(x) = \int_{2}^x\frac{dt}{\log t}.$$
 
-$$\text{Li}(x) = \int_{2}^x\frac{dt}{\log t},$$
-
-which was introduced by Dirichlet. 
+The function $\text{Li}(x)$ was introduced by Dirichlet in a letter to Gauss.
 
 In the mid 1800s Riemann developed the tools necessary to prove that
 
 $$\lim_{x\to\infty}\frac{\pi(x)}{\text{Li}(x)} = 1,$$
 
-showing that $\text{Li}(x)$ is asymptotically a good approximation of $\pi(x)$. Riemann's theorem is known as the prime number theorem, and the main ingredient of the proof comes from a study of the aforementioned Riemann-Zeta function
+showing that $\text{Li}(x)$ is asymptotically a good approximation of $\pi(x)$. The theorem that $\displaystyle\lim_{x\to\infty}(\pi(x)/\text{Li}(x)) = 1$ is known as the prime number theorem, and the main ingredient of the proof comes from a study of the aforementioned Riemann zeta function
 
 $$\zeta(s) = \sum_{n = 1}^\infty\frac{1}{n^s}.$$
 
-Riemann's study of $\zeta(s)$ is why the function bears his name. One of Reimann's key insights is to view $s$ as a not just a real variable but as a complex variable. Not only that, but he found a way to make sense of the function $\zeta(s)$ at complex numbers for which the sum does not converge. The idea of defining a complex analytic function given by a series at points where the series does not converge is called meromorphic (or analytic) continuation.
+Riemann's study of $\zeta(s)$ is why the function bears his name, and one of Riemann's key insights is to view $s$ as a not just a real variable but as a complex variable. Riemann found a way to make sense of the function $\zeta(s)$ at complex numbers for which the sum does not converge. This idea of defining a complex analytic function given by a series at points where the series does not converge is known as meromorphic (or analytic) continuation.
 
-Riemann went further with $\zeta(s)$ than just the prime number theorem. He considered how good of an approximation $\text{Li}(x)$ is to $\pi(x)$, and conjectured that as $x$ goes to infinity,
+Riemann's work on the distribution of prime numbers went further than just considering the limit $\displaystyle\lim_{x\to\infty}(\pi(x)/\text{Li}(x))$. He considered how good of an approximation $\text{Li}(x)$ is to $\pi(x)$, and conjectured that as $x$ goes to infinity,
 
 $$|\pi(x) - \text{Li}(x)| < x^{1/2 + \varepsilon} \text{ for any }\varepsilon > 0.$$
 
-This is much better than the prime number theorem because it gives a bound for how much $\text{Li}(x)$ is off from $\pi(x)$. Riemann showed that a certain conjectural property of the Riemann zeta function $\zeta(s)$, implied the above bound. This property of $\zeta(s)$ is known as the Riemann conjecture and is arguably the biggest open problem in number theory.
+This is much better than the prime number theorem because it gives a bound for how much $\text{Li}(x)$ is off from $\pi(x)$. Riemann showed that a certain conjectural property of the Riemann zeta function, implies the above bound. This property of $\zeta(s)$ is known as the Riemann hypothesis and is arguably the biggest open problem in number theory.
 
-The Riemann conjecture (also known as the Riemann hypothesis) says that all of the zeros of the function $\zeta(s)$ in the complex plane with real part greater than $0$ have real part $\frac{1}{2}$. The Riemann hypothesis was one of 7 millennium problems stated in the year 2000 by the Clay math institute as the most important open problems in mathematics. The Clay math institute offered a prize of 1 million dollars to anyone who solved one of the problems. Of the 7 problems only 1 has been solved since 2000.
+The Riemann hypthesis says that all of the zeros of the function $\zeta(s)$ in the complex plane with real part greater than $0$ have real part $\frac{1}{2}$. The Riemann hypothesis was one of 7 millennium problems stated in the year 2000 by the Clay math institute as the most important open problems in mathematics. The Clay math institute offered a prize of 1 million dollars to anyone who solved one of the problems. Of the 7 problems only 1 (as of now) has been solved since 2000.
+
+# References
+
+L.J. Goldstein, *A History of the Prime Number Theorem*. The American Mathematical Monthly, Vol. 80, No. 6 (Jun. - Jul., 1973), pp 599-615.
 
 # Appendix: Power Series Stuff
 
@@ -140,7 +142,3 @@ $$\lim_{x\to 1}(x-1)\log(1-x) = 0,$$
 and so we conclude that
 
 $$\sum_{n=2}^\infty\frac{1}{n(n-1)} = -\lim_{x\to 1}\int_0^x\log(1-t)dt = 1.$$
-
-
-
-

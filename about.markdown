@@ -4,15 +4,6 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+I am currently a postdoc at UC San Diego in the mathematics department. I received my PhD from UC Santa Cruz and did my undergrad at UC Berkeley. I am interested in mathematics and programming in general, and more specifically number theory and machine learning.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+The purpose of this website/blog is to post write ups for projects, and to have math posts that are accessible (hopefully) to people without a PhD in math but with some math background and interest.
