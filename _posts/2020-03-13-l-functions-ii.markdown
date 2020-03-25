@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Introduction to L-functions II"
+comment_issue_id: 2
 ---
 
 # $L$-series
