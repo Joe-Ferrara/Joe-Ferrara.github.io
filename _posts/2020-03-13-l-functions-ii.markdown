@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Introducion to L-functions II"
+title:  "Introduction to L-functions II"
 ---
 
 # $L$-series

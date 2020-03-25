@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Introducion to L-functions I"
+title:  "Introduction to L-functions I"
 ---
 
 # The Riemann zeta Function
