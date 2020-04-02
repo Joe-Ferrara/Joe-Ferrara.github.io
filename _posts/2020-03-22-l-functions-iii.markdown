@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Introduction to L-functions III"
+title: "Introduction to L-functions III: Quadratic Fields"
 comment_issue_id: 3
 ---
 
@@ -134,7 +134,7 @@ $$L(\chi_{-4}, 1) = h_K\frac{\pi}{4},$$
 
 if $d = -3$
 
-$$L(\chi_{-3}, 1) = h_K\frac{\pi}{6\sqrt{3}},$$
+$$L(\chi_{-3}, 1) = h_K\frac{\pi}{3\sqrt{3}},$$
 
 and if $d \not= -1, -3$
 
