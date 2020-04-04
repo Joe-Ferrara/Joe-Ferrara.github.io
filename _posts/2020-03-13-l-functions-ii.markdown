@@ -81,9 +81,17 @@ It turns out that there are only finitely many roots of unity in $\mathscr O_K$.
 
 Dirichlet's unit theorem is a theorem that describes the "size" of $\mathscr O_K^\times/\mu(\mathscr O_K)$. In order to state it, let $r_1$ be the number of embeddings of $K$ into $\mathbb R$ and let $r_2$ be half of the number of embeddings of $K$ into $\mathbb C$ that do not land in $\mathbb R$. Dirichlet's unit theorem says that $\mathscr O_K^\times/\mu(\mathscr O_K)$ is a free abelian group of rank $r_1 + r_2 - 1$. This is like saying $\mathscr O_K^\times/\mu(\mathscr O_K)$ is a vector space of $\mathbb Z$ of dimension $r_1 + r_2 - 1$. Since $\mathbb Z$ is not a field we say free of finite rank instead of dimension.
 
-We now define an invariant of $K$ that precisely measures the co-volume of $\mathscr O_K^\times$ in $K^\times$. Let $r = r_1 + r_2 - 1$, and let $u_1,\ldots, u_r$ be a $\mathbb Z$-basis for $\mathscr O_K^\times/\mu(\mathscr O_K)$. Let $\sigma_0,\ldots,\sigma_{r_1 - 1}$ be the $r_1$ embeddings of $K$ into $\mathbb R$. The embeddings of $K$ into $\mathbb C$ that do not land in $\mathbb R$ come in complex conjugate pairs. Let $\sigma_{r_1},\ldots, \sigma_r$ be one of each of the complex conjugate pairs. The invariant that measures the co-volume of $\mathscr O_K^\times$ in $K$ is called the regulator of $K$, denoted $\text{Reg}_K$, and defined as the determinant of the $r\times r$ matrix with $i,j$ entry the logarithm of the absolute value of $\sigma_i(u_j)$:
+We now define the invariant of $K$ that precisely measures the co-volume of $\mathscr O_K^\times$ in $K^\times$. Let $r = r_1 + r_2 - 1$, and let $u_1,\ldots, u_r$ be a $\mathbb Z$-basis for $\mathscr O_K^\times/\mu(\mathscr O_K)$. Let $\sigma_0,\ldots,\sigma_{r_1 - 1}$ be the $r_1$ embeddings of $K$ into $\mathbb R$. The embeddings of $K$ into $\mathbb C$ that do not land in $\mathbb R$ come in complex conjugate pairs. Let $\sigma_{r_1},\ldots, \sigma_r$ be one of each of the complex conjugate pairs. The invariant that measures the co-volume of $\mathscr O_K^\times$ in $K$ is called the regulator of $K$, denoted $\text{Reg}_K$, and defined as the absolute value of the determinant of an $r\times r$ matrix which we now define. For $1\leq i\leq r_1 - 1$, $1\leq j\leq r$ let
 
-$$\text{Reg}_K = \det((\log|\sigma_i(u_j)|)_{1\leq i,j\leq r}).$$
+$$r_{i,j} = \log|\sigma_i(u_j)|$$
+
+and for $r_1\leq i\leq r$, $1\leq j\leq r$ let
+
+$$r_{i,j} = \log|\sigma_i(u_j)|^2.$$
+
+Then
+
+$$\text{Reg}_K := |\det(r_{i,j})_{1\leq i,j\leq r}|.$$
 
 These are the invariants we need, and we know introduce the $L$-function. For $s\in\mathbb C$ with real part greater than $1$, we define the Dedekind zeta function associated to $K$ as
 

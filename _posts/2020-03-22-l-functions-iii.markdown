@@ -142,9 +142,9 @@ $$L(\chi_D, 1) = h_K\frac{\pi}{\sqrt{|D|}}.$$
 
 These are remarkable formulas and explain where the formula (1) for $L(\chi_{-4}, 1)$ comes from (using in addition the fact that $h_K = 1$ in this case).
 
-Now we consider when $d>0$. In this case $r_1 = 2$, $r_2 = 0$, $\mu(\mathscr O_K) = \{\pm 1\}$, and $\mathscr O_K^\times/\mu(\mathscr O_K)$ is a free $\mathbb Z$-module of rank $1$. Let $u_K\in\mathscr O_K^\times$ be an element of $\mathscr O_K^\times$ that generates $\mathscr O_K^\times/\mu(\mathscr O_K)$ as a $\mathbb Z$-module. The element $u_K$ is called a fundamental unit of $K$. More about these will be said in my following post. In this case, equation (4) says
+Now we consider when $d>0$. In this case $r_1 = 2$, $r_2 = 0$, $\mu(\mathscr O_K) = \{\pm 1\}$, and $\mathscr O_K^\times/\mu(\mathscr O_K)$ is a free $\mathbb Z$-module of rank $1$. Let $u_K\in\mathscr O_K^\times$ be an element of $\mathscr O_K^\times$ that generates $\mathscr O_K^\times/\mu(\mathscr O_K)$ as a $\mathbb Z$-module and such that $\left\lvert u_K\right\rvert > 1$. The element $u_K$ is called the fundamental unit of $K$. More about these will be said in my following posts. In this case, equation (4) says
 
-$$L(\chi_D, 1) = \frac{2h_K\log|u_K|}{\sqrt{|D|}}.$$
+$$L(\chi_D, 1) = \frac{2h_K\log(u_K)}{\sqrt{D}}.$$
 
 This recovers the formula (2) for $L(\chi_8, 1)$, if we assume that we may take $u_K = 1 + \sqrt{2}$ for $K = \mathbb Q(\sqrt{2})$.
 

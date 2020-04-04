@@ -10,9 +10,9 @@ $$\begin{equation}h_K = \frac{L(\chi_D, 1) \mu_K \sqrt{|D|}}{2\pi}\end{equation}
 
 and when $K$ is real quadratic the formula is
 
-$$\begin{equation}h_K = \frac{L(\chi_D, 1)\sqrt{D}}{2\log|u_K|}\end{equation}$$
+$$\begin{equation}h_K = \frac{L(\chi_D, 1)\sqrt{D}}{2\log(u_K)}\end{equation}$$
 
-where $u_K$ is a fundamental unit of $K$ (which means $u_K$ generates $\mathscr O_K^\times/\mu(\mathscr O_K))$ as a $\mathbb Z$-module). In this and the following post I will use these formulas to calculate class numbers in practice. In order to do this, I'll need to discuss the units $\mathscr O_K^\times$ in more depth to determine $\mu_K$ and $u_K$.
+where $u_K$ is the fundamental unit of $K$ (which means $u_K$ generates $\mathscr O_K^\times/\mu(\mathscr O_K)$ as a $\mathbb Z$-module and $\left\lvert u_K \right\rvert > 1$). In this and the following post I will use these formulas to calculate class numbers in practice. In order to do this, I'll need to discuss the units $\mathscr O_K^\times$ in more depth to determine $\mu_K$ and $u_K$.
 
 In this post specifically, I will first relate determining $\mathscr O_K^\times$ to finding the integer solutions to a polynomial equation with two variables, then using this I'll determine the units of an imaginary quadratic field. Once the units of an imaginary quadratic fields are determined, I will use (1), along with some code I wrote, to calculate the class numbers of imaginary quadratic fields with $\left\lvert d\right\rvert < 100$. In the following post, I'll address the same questions for real quadratic fields and use (2) to calculate class numbers of real quadratic fields.
 
