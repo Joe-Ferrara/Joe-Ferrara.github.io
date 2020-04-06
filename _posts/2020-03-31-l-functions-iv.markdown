@@ -98,7 +98,7 @@ $$\mathscr O_K^\times = \left\{\pm 1, \frac{1 \pm \sqrt{-3}}{2}, \frac{-1 \pm \s
 
 Now that we've determined the units of any imaginary quadratic field, we can use (1) to calculate class numbers. Let's note that if $d = -1$ then $\mu_K = 4$, if $d = -3$ then $\mu_K = 6$, and otherwise $\mu_K = 2$. (Note that $(\frac{1}{2}(1 + \sqrt{-3}))^6 = 1$ so $\frac{1}{2}(1 + \sqrt{-3})$ is a root of unity. Similar relations hold for the other 3 units involving $\sqrt{-3}$.)
 
-At the github repository [here](https://github.com/Joe-Ferrara/IntroToLfunctions), I wrote code to calculate the class numbers. Specifically, the script quad_Lfunctions.py has a function quad_Lval(d, n), which calculates the first $n$-terms of the sum for the value $L(\chi_D, 1)$. The script imag_quad_class_numbers.py then calculates the class numbers of $\mathbb Q(\sqrt{d})$ for all $d$ such that $d<0$ and $\left\lvert d\right\rvert < 100$. The class numbers have been recorded in the following table.
+At the github repository [here](https://github.com/Joe-Ferrara/IntroToLfunctions), I wrote code to calculate the class numbers. Specifically, the script ``quad_Lfunctions.py`` has a function quad_Lval(d, n), which calculates the first $n$-terms of the sum for the value $L(\chi_D, 1)$. The script ``imag_quad_class_numbers.py`` then calculates the class numbers of $\mathbb Q(\sqrt{d})$ for all $d$ such that $d<0$ and $\left\lvert d\right\rvert < 100$. The class numbers have been recorded in the following table.
 
 | d | Class Number of $\mathbb Q(\sqrt{d})$ | | d | Class Number of $\mathbb Q(\sqrt{d})$|
 | --- | --- | | --- | --- |

@@ -46,7 +46,7 @@ For $L(\chi_8, s)$, $a_n$ is $0$ if $n$ is even just like for $L(\chi_{-4},s)$. 
 
 By just slightly changing the $a_n$, we obtained two surprisingly different values, $\frac{\pi}{4}$ and $\frac{\log(1 + \sqrt{2})}{\sqrt{2}}$. In my next post I will explain where the two numbers $\frac{\pi}{4}$ and $\frac{\log(1 + \sqrt{2})}{\sqrt{2}}$ come from, and the arithmetic significance of the identities (1) and (2).
 
-It is easy to write code to verify (1) and (2). I have posted a script, lseries_exs.py, at the github repository [here](https://github.com/Joe-Ferrara/IntroToLfunctions), that shows the convergence of (1) and (2) when you sum different numbers of terms from the defining series for $L(\chi_{-4}, 1)$ and $L(\chi_{8}, 1)$. For instance, the first 5 decimals of the sum of the first 100,000 terms of $L(\chi_{-4}, 1)$ agrees with the first 5 decimals of $\frac{\pi}{4}$, and the first 9 decimals of the sum of the first 100,000 terms of $L(\chi_8,1)$ agrees with the first 9 decimals of $\frac{\log(1 + \sqrt{2})}{\sqrt{2}}$.
+It is easy to write code to verify (1) and (2). I have posted a script, ``lseries_exs.py``, at the github repository [here](https://github.com/Joe-Ferrara/IntroToLfunctions), that shows the convergence of (1) and (2) when you sum different numbers of terms from the defining series for $L(\chi_{-4}, 1)$ and $L(\chi_{8}, 1)$. For instance, the first 5 decimals of the sum of the first 100,000 terms of $L(\chi_{-4}, 1)$ agrees with the first 5 decimals of $\frac{\pi}{4}$, and the first 9 decimals of the sum of the first 100,000 terms of $L(\chi_8,1)$ agrees with the first 9 decimals of $\frac{\log(1 + \sqrt{2})}{\sqrt{2}}$.
 
 
 # Class Number Formula
