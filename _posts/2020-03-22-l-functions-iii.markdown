@@ -12,13 +12,13 @@ and
 
 \begin{equation}L(\chi_8, 1) = 1 - \frac{1}{3} - \frac{1}{5} + \frac{1}{7} + \frac{1}{9} - \frac{1}{11} - \frac{1}{13} + \frac{1}{15} + \cdots = \frac{\log(1 + \sqrt{2})}{\sqrt{2}}.\end{equation}
 
-I will also explain where the sequences defining $L(\chi_{-4}, s)$ and $L(\chi_8, s)$ come from as well as where the numbers $\frac{\pi}{4}$ and $\frac{\log(1 + \sqrt{2})}{\sqrt{2}}$ come from. To do this, the most simple number systems that are not the integers will be introduced and used.
+I will also explain where the sequences defining $L(\chi_{-4}, s)$ and $L(\chi_8, s)$ come from as well as where the numbers $\frac{\pi}{4}$ and $\frac{\log(1 + \sqrt{2})}{\sqrt{2}}$ come from. To do this, the most simple number systems that are not the rational numbers will be introduced and studied.
 
 # Quadratic Fields
 
 Quadratic fields are the first fields after the rational numbers to study. As a $\mathbb Q$-vector space, they have dimension $2$, and are obtained by adjoining the square root of an integer to $\mathbb Q$.
 
-Let $d$ be a square free integer. (This means that no squares in $\mathbb Z$ divide $d$.) The quadratic field associated to $d$ is
+Let $d$ be a square free integer, which means that no square numbers in $\mathbb Z$ divide $d$. The quadratic field associated to $d$ is
 
 $$\mathbb Q(\sqrt{d}) = \{ \alpha + \beta\sqrt{d} : \alpha, \beta \in \mathbb{Q}\}.$$
 
@@ -46,13 +46,13 @@ $$\left(x - \frac{1 + \sqrt{d}}{2}\right)\left(x - \frac{1 - \sqrt{d}}{2}\right)
 
 which is a monic polynomial that has integer coefficients if and only if $d\equiv 1\bmod 4$ since $\frac{1-d}{4}\in \mathbb Z$ if and only if $d\equiv 1\bmod 4$. It turns out that you cannot get more than this denominator of $2$ showing up in the ring of integers of these quadratic fields.
 
-The first invariant of $\mathscr O_K$ I'll discuss is the discriminant of $\mathscr O_K$. Recall that the discriminant measures the covolume of $\mathscr O_K$ in $K$, and since the definition of $\mathscr O_K$ differs whether or not $d$ is congruent to $1\bmod 4$, the discriminant will differ as well. In general we have the inclusion of sets
+The first invariant of $\mathscr O_K$ I'll discuss is the discriminant of $\mathscr O_K$. Recall that the discriminant measures the covolume of $\mathscr O_K$ in $K$. since the definition of $\mathscr O_K$ differs whether or not $d$ is congruent to $1\bmod 4$, the discriminant will differ as well. In general we have the inclusion of sets
 
 $$\{\alpha + \beta\sqrt{d} : \alpha,\beta\in\mathbb Z\}\subset\left\{\alpha + \beta \frac{1 + \sqrt{d}}{2} : \alpha,\beta\in\mathbb Z\right\}$$
 
 since $\sqrt{d} = -1 + 2\frac{1 + \sqrt{d}}{2}$. This inclusion shows that when $d\equiv 1\bmod 4$, the size of $\mathscr O_K$ relative to $K$ is larger than when $d\equiv 2$ and $3=\bmod 4$, so the covolume will be smaller.
 
-To precisely calculate the discriminant, I need to say something about embeddings of $K$ into $\mathbb C$. An embedding of $K$ into $\mathbb C$ is a function from $K$ to $\mathbb C$ that preserves the arithmetic operations of $K$. Let $\varphi :K\rightarrow \mathbb C$ be an embedding of $K$ into $\mathbb C$. Then it turns out that $\varphi$ must be the identity on $\mathbb Q$, and $\varphi$ is determined by where it sends $\sqrt{d}$. The two possibilities for $\varphi(\sqrt{d})$ are $\sqrt{d}$ and $-\sqrt{d}$. I'm abusing notation a bit here by apriori not thinking of $K$ as a subset of $\mathbb C$ and saying that the two ways to make $K$ a subset of $\mathbb C$ such that the arithmetic operations in $K$ agree with those in $\mathbb C$ are to send $\sqrt{d}\in K$ (thought of abstractly as an element of $K$) to either $\sqrt{d}\in \mathbb C$ or $-\sqrt{d}\in \mathbb C$ (now thought of as concrete complex numbers).
+To precisely calculate the discriminant, we need to consider the embeddings of $K$ into $\mathbb C$. An embedding of $K$ into $\mathbb C$ is a function from $K$ to $\mathbb C$ that preserves the arithmetic operations of $K$. Let $\varphi :K\rightarrow \mathbb C$ be an embedding of $K$ into $\mathbb C$. Then it turns out that $\varphi$ must be the identity on $\mathbb Q$, and $\varphi$ is determined by where it sends $\sqrt{d}$. The two possibilities for $\varphi(\sqrt{d})$ are $\sqrt{d}$ and $-\sqrt{d}$. I'm abusing notation a bit here by apriori not thinking of $K$ as a subset of $\mathbb C$ and saying that the two ways to make $K$ a subset of $\mathbb C$ such that the arithmetic operations in $K$ agree with those in $\mathbb C$ are to send $\sqrt{d}\in K$ (thought of abstractly as an element of $K$) to either $\sqrt{d}\in \mathbb C$ or $-\sqrt{d}\in \mathbb C$ (now thought of as concrete complex numbers).
 
 Before calculating the discriminant of $\mathscr O_K$, I want to mention an important dichotomy that happens with quadratic fields. When $d >0$, $\sqrt{d}$ and $-\sqrt{d}$ are real numbers, so both of the embeddings of $K$ into $\mathbb C$ land in $\mathbb R$. In this case $K$ is called a *real quadratic field* and the invariants $r_1$ and $r_2$ are $r_1 = 2, r_2 = 0$. When $d < 0$, $\sqrt{d}$ and $-\sqrt{d}$ are purely imaginary complex numbers, so both the embeddings of $K$ into $\mathbb C$ do not land in $\mathbb R$. Further, $-\sqrt{d}$ is the complex conjugate of $\sqrt{d}$. In this case $K$ is called an *imaginary quadratic field* and the invariants $r_1$ and $r_2$ are $r_1 = 0, r_2 = 1$.
 
@@ -72,7 +72,7 @@ Before I discuss the other terms in the class number formula for $K$, I will ass
 
 $$\chi_D:\mathbb N\longrightarrow \{-1, 0, 1\}$$
 
-which determines the sequence $a_n = \chi_D(n)$. Then the $L$-series associated to $K$ is defined as
+which determines a sequence $a_n = \chi_D(n)$. The $L$-series associated to $K$ is defined as
 
 $$L(\chi_D, s) = \sum_{n = 1}^\infty\frac{\chi_D(n)}{n^s}.$$
 
@@ -90,7 +90,15 @@ $\chi_D$ is now defined on all prime numbers, and we extend $\chi_D$ to all of $
 
 $$\chi_D(n) = \prod_{i = 1}^m\chi_D(p_i)^{a_i}.$$
 
-The function $\chi_D$ is known as the Kronecker symbol and it is a generalization of the Legendre symbol. It is related to the arithmetic of $\mathscr O_K$ in the following way. If $p$ is a prime number that does not divide $D$, then $\chi_D(p) = -1$ if the ideal $p\mathscr O_K$ is a prime ideal of $\mathscr O_K$, and $\chi_D(p) = 1$ if the ideal $p\mathscr O_K$ is the product of two distinct prime ideals of $\mathscr O_K$.
+The function $\chi_D$ is known as the Kronecker symbol and it is a generalization of the Legendre symbol. It is related to the arithmetic of $\mathscr O_K$ in the following way. Let $p$ be a prime number that does not divide $D$. $\chi_D(p) = -1$ if the ideal $p\mathscr O_K$ is a prime ideal of $\mathscr O_K$. In this case the prime number $p$ continues to be a prime number in $\mathscr O_K$. $\chi_D(p) = 1$ if the ideal $p\mathscr O_K$ is the product of two distinct prime ideals of $\mathscr O_K$. In this case the prime number $p$ factors into two different prime numbers in $\mathscr O_K$, so $p$ is not a prime number in $\mathscr O_K$, but a product of two new prime numbers. If $p$ divides $D$, then $\chi_D(p) = 0$ and the prime ideal $p\mathscr O_K$ is the product of a prime ideal of $\mathscr O_K$ with itself.
+
+These three arithmetic behaviors of prime numbers can be seen in the canonical example $K = \mathbb Q(\sqrt{-1})$. Let $i = \sqrt{-1}$. In this case $d = -1 \equiv 3\bmod 4$, so
+
+$$\mathscr O_K = \{\alpha + \beta i : \alpha, \beta \in \mathbb Z\}$$
+
+and $D = 4$. The units, $\mathscr O_K^\times$, of $\mathscr O_K$ are $1,-1,i$, and $-i$. These play the role of $1$ and $-1$ in $\mathbb Z$. The "positive" numbers in $\mathscr O_K$ are $\alpha + \beta i$ with $\alpha,\beta\geq 0$ but not both $0$. Any $\alpha + \beta i\in\mathscr O_K$ can be multiplied by $1,-1, i,$ or $-i$ to be made positive (just as any integer can be multiplied by $1$ or $-1$ to be made positive). A prime number in $\mathscr O_K$ is a "positive number" in $\mathscr O_K$ that cannot be written as a product of more than one other positive number in $\mathscr O_K$, where we disregard the use of $1,-1,i,$ and $-i$ in any expressions.
+
+In $\mathscr O_K$, the prime number $2$ factors in $\mathscr O_K$ as $2 = -i(1 + i)^2$. Here $1 + i$ is the new prime in $\mathscr O_K$ and we disregard $-i$ in the prime factorization just as we would disregard $1$ or $-1$ in the prime factorization of an integer. The prime number $3$ stays prime in $\mathscr O_K$. Try writing $3$ as a product of two or more "positive" elements of $\mathscr O_K$, disregarding any $1,-1,i$ or $-i$ that you use. The prime number $5$ factors in $\mathscr O_K$ as $5 = -i(1+2i)(2 + i)$. Here $1 + 2i$ and $2 + i$ are the new prime numbers that $5$ is written as a product of.
 
 You may wonder why the subscript on $\chi_D$ is $D$ and not $d$. Using some language from abstract algebra I can explain one reason for this. Using $\chi_D$, we can define a function
 
@@ -104,11 +112,11 @@ $$\widetilde{\chi}:(\mathbb Z/N\mathbb Z)^\times\longrightarrow \{\pm 1\}$$
 
 $$\widetilde{\chi}(a + N\mathbb Z) = \chi_D(a)$$
 
-is a well-defined group homomorphism, $\left\lvert D\right\rvert$ is the smallest one. This is one reason why $\chi_D$ is written with the subscript $D$ and not $d$.
+is a well-defined group homomorphism, $\left\lvert D\right\rvert$ is the smallest one.
 
 # Relation to Class Number Formula
 
-Since $\chi_D$ is defined to be multiplicative (means that for all $a,b$, $\chi_D(ab) = \chi_D(a)\chi_D(b)$), $L(\chi_D,s)$ may be written like the Riemann zeta function as a product over all the prime numbers:
+Since $\chi_D$ is defined to be multiplicative, which means that for all $a,b$, $\chi_D(ab) = \chi_D(a)\chi_D(b)$, $L(\chi_D,s)$ may be written like the Riemann zeta function as a product over all the prime numbers:
 
 $$L(\chi_D,s) = \sum_{n=1}^\infty\frac{\chi_D(n)}{n^s} = \prod_{p-\text{prime}}\left(1 - \frac{\chi_D(p)}{p^s}\right)^{-1}.$$
 
@@ -128,7 +136,7 @@ Then using the class number formula for $K$, the equality (3) gives us that
 
 where $r_1$ and $r_2$ are the invariants of $K$. To further analyze this formula, we need to break into the two cases of $d > 0$ and $d < 0$.
 
-When $d < 0$ $r_1 = 0$ and $r_2 = 1$, so by Dirichlet's unit theorem $\mathscr O_K^\times/\mu(\mathscr O_K)$ is a free $\mathbb Z$-module of rank 0, so $\mu(\mathscr O_K) = \mathscr O_K^\times$ and $\text{Reg}_K = 1$. It turns out, and I will say more about this in my next post, that $\mu(\mathscr O_K) = \{\pm 1\}$ unless $d = -1$ or $-3$. When $d = -1$, $$\mu(\mathscr O_K) = \{\pm 1, \pm\sqrt{-1}\}$$ and when $d = -3$, $$\mu(\mathscr O_K) = \{\pm 1, \pm e^{2\pi i/3}, \pm e^{4\pi i/3}\}$$. Equation (4), then says the following: if $d = -1$
+When $d < 0$, $r_1 = 0$ and $r_2 = 1$, so by Dirichlet's unit theorem $\mathscr O_K^\times/\mu(\mathscr O_K)$ is a free $\mathbb Z$-module of rank 0, so $\mu(\mathscr O_K) = \mathscr O_K^\times$ and $\text{Reg}_K = 1$. It turns out, and I will say more about this in my next post, that $\mu(\mathscr O_K) = \{\pm 1\}$ unless $d = -1$ or $-3$. When $d = -1$, $$\mu(\mathscr O_K) = \{\pm 1, \pm\sqrt{-1}=\pm i\}$$ and when $d = -3$, $$\mu(\mathscr O_K) = \{\pm 1, \pm e^{2\pi i/3}, \pm e^{4\pi i/3}\}$$. Equation (4), then says the following: if $d = -1$
 
 $$L(\chi_{-4}, 1) = h_K\frac{\pi}{4},$$
 

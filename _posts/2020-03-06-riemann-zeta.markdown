@@ -14,11 +14,11 @@ Euclid in about 300 B.C.E. was the first to show that there are infinitely many 
 
 One reason prime numbers are of interest in the study of numbers is that prime numbers are the atoms of whole numbers. The fundamental theorem of arithmetic, also proved by Euclid, says that every every whole number greater that $1$ can be written uniquely as a product of prime numbers. For example $6$ from before is written as a product of prime numbers as $6 = 2\cdot 3$. A few other examples are $12 = 2^2\cdot3$, $869 = 11\cdot 79$, and $7735 = 5\cdot 7\cdot 13\cdot 17$.
 
-The infinitude of primes and the fundamental theorem of arithmetic lead to two natural questions: How are the prime numbers distributed among all the whole numbers? And do other number systems exist with their own prime numbers and a fundamental theorem of arithmetic? The study of $L$-functions is central in addressing and studying these two questions in modern number theory. In this series of posts, I will explain some of the roles $L$-functions play classically in addressing the aforementioned questions, introduce the modern perspective on $L$-functions, and explain how my research fits into the modern picture. In this first post I will consider the first $L$-function, known today as the Riemann zeta function and denoted $\zeta(s)$. Because of the technical nature of the subject, the posts will become more technical as we go along. I will begin each post with an informal discussion of the ideas that will appear.
+The infinitude of primes and the fundamental theorem of arithmetic lead to two natural questions: How are the prime numbers distributed among all the whole numbers? Do other number systems exist with their own prime numbers and a fundamental theorem of arithmetic? The study of $L$-functions is central in addressing and studying these two questions in modern number theory. In this series of posts, I will explain some of the roles $L$-functions play classically in addressing the aforementioned questions, introduce the modern perspective on $L$-functions, and explain how my research fits into the modern picture. In this first post I consider the first $L$-function, known today as the Riemann zeta function and denoted $\zeta(s)$.
 
 The Riemann zeta function, $\zeta(s)$, was first studied by Leonhard Euler in the 1700s. He gave its definition as the infinite series
 
-$$\zeta(s) = \sum_{n = 1}^\infty\frac{1}{n^s}$$
+$$\zeta(s) = \sum_{n = 1}^\infty\frac{1}{n^s},$$
 
 where $s$ is a real variable greater than $1$. Note that if we plug in $s = 1$, we get the harmonic series that diverges.
 
@@ -56,19 +56,19 @@ $$\sum_{\substack{p\\\text{prime}}}\frac{1}{p(p-1)}\leq \sum_{n = 2}^\infty\frac
 
 In the appendix below, I show that $\displaystyle \sum_{n=2}^\infty \frac{1}{n(n-1)} = 1$. We've then shown that
 
-$$\infty = \sum_{\substack{p\\\text{prime}}}\frac{1}{p}$$
+$$\infty = \sum_{\substack{p\\\text{prime}}}\frac{1}{p},$$
 
 which implies that there are infinitely many prime numbers since if there were finitely many then the above sum could not be infinite.
 
-Euler's proof is the tip of the iceberg in the relation of $\zeta(s)$ to the prime numbers. Another important example is the relationship between the Riemann zeta function and the distribution of primes.  One can observe that there are fewer primes amongst large numbers than amongst the small ones. For example in the list of primes above, the second half of the list has more jumps of size $6$ than the first half of the list. Gauss in the late 1700s and early 1800s studied this phenomenon and made precise statements about the rate at which the prime numbers become more spread out. He conjectured that asymptotically the number of prime numbers less than $x$ is approximately
+Euler's proof is the tip of the iceberg in the relation of $\zeta(s)$ to the prime numbers. Another important example is the relationship between the Riemann zeta function and the distribution of primes.  One can observe that there are fewer primes amongst large numbers than amongst the small ones. For example in the list of primes above, the second half of the list has more jumps of size $6$ than the first half of the list. Gauss in the late 1700s and early 1800s studied this phenomenon and made precise statements about the rate at which the prime numbers become more spread out. He conjectured that asymptotically the number of prime numbers less than $x$ is
 
 $$\frac{x}{\log x}.$$
 
-Since $\log x$ grows slower than $x$, this matches the observation that primes become more spread out amongst larger numbers. Further, it gives a candidate function to measure the rate at which primes grow. In more precise terms, Gauss' conjecture said the following: if we let $\pi(x)$ be the number of primes less than the real number $x$, then
+Since $\log x$ grows slower than $x$, this matches the observation that primes become more spread out amongst larger numbers. Further, it gives a candidate function to measure the rate at which primes grow. In more precise terms, Gauss' conjecture said the following: let $\pi(x)$ be the number of primes less than the real number $x$. Then
 
 $$\lim_{x\to\infty}\frac{\pi(x)}{\frac{x}{\log x}} = 1.$$
 
-Gauss' conjecture is true, and it turns out that there is a better function to use than $\frac{x}{\log(x)}$ to approximate $\pi(x)$. This function is know as $\text{Li}(x)$, and defined by the integral
+Gauss' conjecture is true, and it turns out that there is a better function to use than $\frac{x}{\log(x)}$ to approximate $\pi(x)$. This function is known as $\text{Li}(x)$, and defined by the integral
 
 $$\text{Li}(x) = \int_{2}^x\frac{dt}{\log t}.$$
 
@@ -88,9 +88,9 @@ Riemann's work on the distribution of prime numbers went further than just consi
 
 $$|\pi(x) - \text{Li}(x)| < x^{1/2 + \varepsilon} \text{ for any }\varepsilon > 0.$$
 
-This is much better than the prime number theorem because it gives a bound for how much $\text{Li}(x)$ is off from $\pi(x)$. Riemann showed that a certain conjectural property of the Riemann zeta function, implies the above bound. This property of $\zeta(s)$ is known as the Riemann hypothesis and is arguably the biggest open problem in number theory.
+This is much better than the prime number theorem because it gives a bound for how much $\text{Li}(x)$ is off from $\pi(x)$. Riemann showed that a certain conjectural property of the Riemann zeta function implies the above bound. This property of $\zeta(s)$ is known as the Riemann hypothesis and is arguably the biggest open problem in number theory.
 
-The Riemann hypthesis says that all of the zeros of the function $\zeta(s)$ in the complex plane with real part greater than $0$ have real part $\frac{1}{2}$. The Riemann hypothesis was one of 7 millennium problems stated in the year 2000 by the Clay math institute as the most important open problems in mathematics. The Clay math institute offered a prize of 1 million dollars to anyone who solved one of the problems. Of the 7 problems only 1 (as of now) has been solved since 2000.
+The Riemann hypthesis says that all of the zeros of the function $\zeta(s)$ in the complex plane with real part greater than $0$ have real part $\frac{1}{2}$. The Riemann hypothesis was one of 7 millennium problems stated in the year 2000 by the Clay math institute as the most important open problems in mathematics. The Clay math institute offered a prize of 1 million dollars to anyone who solved one of the problems. Of the 7 problems only 1 (as of now) has been solved.
 
 # References
 
@@ -98,7 +98,7 @@ L.J. Goldstein, *A History of the Prime Number Theorem*. The American Mathematic
 
 # Appendix: Power Series Stuff
 
-In this brief appendix to the post, I'll record some power series facts that were used in the poast, and I'll prove that
+In this brief appendix, I'll record some power series facts that were used in the post, and I'll prove that
 
 $$\sum_{n=2}^\infty \frac{1}{n(n-1)} = 1.$$
 
