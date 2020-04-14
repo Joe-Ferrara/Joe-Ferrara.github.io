@@ -94,11 +94,13 @@ The function $\chi_D$ is known as the Kronecker symbol and it is a generalizatio
 
 These three arithmetic behaviors of prime numbers can be seen in the canonical example $K = \mathbb Q(\sqrt{-1})$. Let $i = \sqrt{-1}$. In this case $d = -1 \equiv 3\bmod 4$, so
 
-$$\mathscr O_K = \{\alpha + \beta i : \alpha, \beta \in \mathbb Z\}$$
+$$\mathscr O_K = \{\alpha + \beta i : \alpha, \beta \in \mathbb Z\},$$
 
-and $D = 4$. The units, $\mathscr O_K^\times$, of $\mathscr O_K$ are $1,-1,i$, and $-i$. These play the role of $1$ and $-1$ in $\mathbb Z$. The "positive" numbers in $\mathscr O_K$ are $\alpha + \beta i$ with $\alpha,\beta\geq 0$ but not both $0$. Any $\alpha + \beta i\in\mathscr O_K$ can be multiplied by $1,-1, i,$ or $-i$ to be made positive (just as any integer can be multiplied by $1$ or $-1$ to be made positive). A prime number in $\mathscr O_K$ is a "positive number" in $\mathscr O_K$ that cannot be written as a product of more than one other positive number in $\mathscr O_K$, where we disregard the use of $1,-1,i,$ and $-i$ in any expressions.
+and $D = 4$. The units, $\mathscr O_K^\times$, of $\mathscr O_K$ are $1,-1,i$, and $-i$. These play the role of $1$ and $-1$ in $\mathbb Z$. The "positive" numbers in $\mathscr O_K$ are $\alpha + \beta i$ with $\alpha > 0$ and $\beta\geq 0$. Any $\alpha + \beta i\in\mathscr O_K$ can be multiplied by $1,-1, i,$ or $-i$ to be made positive (just as any integer can be multiplied by $1$ or $-1$ to be made positive). A prime number in $\mathscr O_K$ is a "positive number" in $\mathscr O_K$ that cannot be written as a product of more than one other positive number in $\mathscr O_K$, where we disregard the use of $1,-1,i,$ and $-i$ in any expressions because they are units (just like we disregard $-1$ in the factorization of a negative integer).
 
-In $\mathscr O_K$, the prime number $2$ factors in $\mathscr O_K$ as $2 = -i(1 + i)^2$. Here $1 + i$ is the new prime in $\mathscr O_K$ and we disregard $-i$ in the prime factorization just as we would disregard $1$ or $-1$ in the prime factorization of an integer. The prime number $3$ stays prime in $\mathscr O_K$. Try writing $3$ as a product of two or more "positive" elements of $\mathscr O_K$, disregarding any $1,-1,i$ or $-i$ that you use. The prime number $5$ factors in $\mathscr O_K$ as $5 = -i(1+2i)(2 + i)$. Here $1 + 2i$ and $2 + i$ are the new prime numbers that $5$ is written as a product of.
+In $\mathscr O_K$, the prime number $2$ factors in $\mathscr O_K$ as $2 = -i(1 + i)^2$. Here $1 + i$ is the new prime in $\mathscr O_K$ and we disregard $-i$ in the prime factorization. Because of how one multiplies complex numbers, the product of two "positive" numbers may not be "positive" anymore. This happens with $(1 + i)^2 = 2i$, which we then multiply by $-i$ to make positive and equal to $2$. These three examples of $2,3$, and $5$ show the three possible behaviors of prime numbers in $K$.
+
+The prime number $3$ stays prime in $\mathscr O_K$. Try writing $3$ as a product of two or more "positive" elements of $\mathscr O_K$, disregarding any $1,-1,i$ or $-i$ that you use. The prime number $5$ factors in $\mathscr O_K$ as $5 = -i(1+2i)(2 + i)$. Here $1 + 2i$ and $2 + i$ are the new prime numbers that $5$ is written as a product of.
 
 You may wonder why the subscript on $\chi_D$ is $D$ and not $d$. Using some language from abstract algebra I can explain one reason for this. Using $\chi_D$, we can define a function
 
@@ -156,9 +158,9 @@ $$L(\chi_D, 1) = \frac{2h_K\log(u_K)}{\sqrt{D}}.$$
 
 This recovers the formula (2) for $L(\chi_8, 1)$, if we assume that we may take $u_K = 1 + \sqrt{2}$ for $K = \mathbb Q(\sqrt{2})$.
 
-These remarkable formulas give tons of special value formulas resulting in identities for the infinite series $L(\chi_D, 1)$. Further, they give use a way to calculate $h_K$ (if in the real quadratic case we can determine $u_K$). Dirichlet was the first to prove these formulas, and that is why the class number formula is known as Dirichlet's class number formula. (Further, functions such as $L(\chi_D, s)$ are known as Dirichlet $L$-functions.) In my following post, I will use these formulas and write code to calculate the class numbers, $h_K$, for real and imaginary quadratic fields with $\left\lvert d\right\rvert < 100$.
+These remarkable formulas give tons of special value formulas resulting in identities for the infinite series $L(\chi_D, 1)$. Further, they give use a way to calculate $h_K$ (if in the real quadratic case we can determine $u_K$). Dirichlet was the first to prove these formulas, and that is why the class number formula is known as Dirichlet's class number formula. Further, functions such as $L(\chi_D, s)$ are known as Dirichlet $L$-functions. In my following posts, I will use these formulas and write code to calculate the class numbers, $h_K$, for real and imaginary quadratic fields with $\left\lvert d\right\rvert < 100$.
 
-Below is a reference that goes through all of this material in gory detail from a theoretical math perspective.
+Below is a reference that goes through all of this material in gory detail from a theoretical perspective.
 
 # Reference
 

@@ -22,7 +22,7 @@ First let's recall that
 
 $$\mathscr O_K^\times = \{u\in \mathscr O_K : \text{there exists }v\in \mathscr O_K \text{ such that } uv = 1\},$$
 
-and that $\mathscr O_K^\times$ is called the units of $\mathscr O_K$ or the units of $K$. In words, a unit of $K$ is an element of the ring of integers of $K$ (recall $\mathscr O_K$ is called the ring of integers of $K$) such that its multiplicative inverse is also an algebraic integer of $K$. Every nonzero element of $K$ has a multiplicative inverse in $K$. The units are the elements of $\mathscr O_K$ whose multiplicative inverse is also in $\mathscr O_K$. For $\mathbb Q$, where the ring of integers is $\mathbb Z$, the units are $\pm 1$. In general for quadratic fields, we shall see that the conditions $u,v\in\mathscr O_K$ and $uv = 1$ impose strong restrictions on the possibilities for $u$ and $v$. We will explore these restrictions to obtain an understanding of $\mathscr O_K^\times$.
+and that $\mathscr O_K^\times$ is called the units of $\mathscr O_K$ or the units of $K$. In words, a unit of $K$ is an element of the ring of integers of $K$ (recall $\mathscr O_K$ is called the ring of integers of $K$) such that its multiplicative inverse is also an algebraic integer of $K$. Every nonzero element of $K$ has a multiplicative inverse in $K$. The units are the elements of $\mathscr O_K$ whose multiplicative inverse is also in $\mathscr O_K$. For $\mathbb Q$, where the ring of integers is $\mathbb Z$, the units are $\pm 1$. In general for quadratic fields, we shall see that the conditions $u,v\in\mathscr O_K$ and $uv = 1$ impose strong restrictions on the possibilities for $u$ and $v$. We explore these restrictions to obtain an understanding of $\mathscr O_K^\times$.
 
 Assume $d\equiv 2$ or $3\bmod 4$. Then
 
@@ -38,9 +38,9 @@ $$\frac{\alpha}{\alpha^2 - d\beta^2}, \frac{\beta}{\alpha^2 - d\beta^2}\in\mathb
 
 which is if and only if $\alpha^2 - d\beta^2$ divides $\alpha$ and $\beta$ in $\mathbb Z$.
 
-It is clear that if $\alpha^2 - d\beta^2 = \pm1$, then $\alpha + \beta\sqrt{d}$ is a unit in $\mathscr O_K$ since $\pm1$ divide any integer. It turns out the converse is true as well, which I'll show with a quick proof.
+It is clear that if $\alpha^2 - d\beta^2 = \pm1$, then $\alpha + \beta\sqrt{d}$ is a unit in $\mathscr O_K$ since $1$ and $-1$ divide any integer. It turns out the converse is true as well, which I'll show with a quick proof.
 
-Assume $\alpha + \beta\sqrt{d}$ is a unit in $\mathscr O_K$, so $\alpha^2 - d\beta^2$ divides $\alpha$ and $\beta$. Either $\alpha^2 - d\beta^2$ is $\pm 1$ or $\alpha^2 - d\beta^2$ is divisible by some prime number. Let's assume $\alpha^2 - d\beta^2$ is divisible by a prime number and proceed to get a contradiction. Let $p$ be a prime that divides $\alpha^2 - d\beta^2$. Then $p$ divides $\alpha$ and $p$ divides $\beta$. Let $p^k$ be the largest power of $p$ dividing both $\alpha$ and $\beta$. Then $p^{2k}$ divides $\alpha^2 - d\beta^2$. But since $\alpha^2 - d\beta^2$ divides $\alpha$ and $\beta$, then $p^{2k}$ divides $\alpha$ and $\beta$. This is a contradiction because $2k > k$ and $p^k$ is the largest power of $p$ that divides both $\alpha$ and $\beta$.
+Assume $\alpha + \beta\sqrt{d}$ is a unit in $\mathscr O_K$, so $\alpha^2 - d\beta^2$ divides $\alpha$ and $\beta$. Either $\alpha^2 - d\beta^2$ is $\pm 1$ or $\alpha^2 - d\beta^2$ is divisible by some prime number. Let's assume $\alpha^2 - d\beta^2$ is divisible by a prime number and proceed to get a contradiction. Let $p$ be a prime that divides $\alpha^2 - d\beta^2$. Then $p$ divides $\alpha$ and $p$ divides $\beta$ since $\alpha^2 - d\beta^2$ divides $\alpha$ and $\beta$. Let $p^k$ be the largest power of $p$ dividing both $\alpha$ and $\beta$. Then $p^{2k}$ divides $\alpha^2 - d\beta^2$. But since $\alpha^2 - d\beta^2$ divides $\alpha$ and $\beta$, then $p^{2k}$ divides $\alpha$ and $\beta$. This is a contradiction because $2k > k$ and $p^k$ is the largest power of $p$ that divides both $\alpha$ and $\beta$.
 
 We've now shown that $\alpha + \beta\sqrt{d}\in \mathscr O_K$ is a unit if and only if $\alpha^2 - d\beta^2 = \pm 1$. Therefore determining the units in $\mathscr O_K$ amounts to determining the integer solutions to the equation $x^2 - dy^2 = \pm 1$. Before proceeding to analyze what the solutions are, let's address the case when $d\equiv 1\bmod 4$.
 
@@ -70,13 +70,13 @@ $$\frac{2}{\alpha + \beta\sqrt{d}} = \frac{2}{\alpha + \beta\sqrt{d}}\frac{\alph
 
 With similar reasoning as when $d\equiv 2$ or $3\bmod 4$, one shows that $\frac{1}{2}(\frac{4\alpha}{\alpha^2 - d\beta^2} - \frac{4\beta}{\alpha^2 - d\beta^2}\sqrt{d}) \in \mathscr O_K$ if and only if $\alpha^2 - d\beta^2 = \pm4$. Then the units of $\mathscr O_K$ are determined by the integer solutions to the equation $x^2 - dy^2 = \pm4$.
 
-To conclude and summarize, we've shown that if $d\equiv 2$ or $3\bmod 4$, then $\mathscr O_K^\times$ is determined by the integral solutions to $x^2 - dy^2 = \pm1$, and if $d\equiv1\bmod 4$, then $\mathscr O_K^\times$ is determined by the integral solutions of $x^2 - dy^2 = \pm4$.
+To conclude and summarize, we've shown that if $d\equiv 2$ or $3\bmod 4$, then $\mathscr O_K^\times$ is determined by the integer solutions to $x^2 - dy^2 = \pm1$, and if $d\equiv1\bmod 4$, then $\mathscr O_K^\times$ is determined by the integer solutions of $x^2 - dy^2 = \pm4$.
 
 # The Imaginary Quadratic Case
 
-Assume $d < 0$, so $K$ is an imaginary quadratic field. Let's determine $\mathscr O_K^\times$. Since $d < 0$, for $x$, $y\in\mathbb Z$, $x^2 - dy^2 \geq 0$, so there are no solutions to $x^2 - dy^2 = -1$ or $x^2 - dy^2 = -4$. We are then to look for solutions to $x^2 - dy^2 = 1$ when $d\equiv 2$ or $3\bmod 4$ and $x^2 - dy^2 = 4$ when $d\equiv 1\bmod 4$. We'll see that for either case of $d$, there is one outlier $K$, and when $K$ is not the outlier, the only units are $\pm 1$.
+Assume $d < 0$, so $K$ is an imaginary quadratic field. Let's determine $\mathscr O_K^\times$. Since $d < 0$, for $x$, $y\in\mathbb Z$, $x^2 - dy^2 \geq 0$, so there are no solutions to $x^2 - dy^2 = -1$ or $x^2 - dy^2 = -4$. We are then to look for solutions to $x^2 - dy^2 = 1$ when $d\equiv 2$ or $3\bmod 4$, and $x^2 - dy^2 = 4$ when $d\equiv 1\bmod 4$. We'll see that for either case of $d$ there is one outlier $K$, and when $K$ is not the outlier the only units are $\pm 1$.
 
-First assume $d\equiv 2$ or $3\bmod 4$ and let $\alpha,\beta\in\mathbb Z$ be a solution to $x^2 - dy^2 = \pm 1$. If $d < -1$ and $\beta\not=0$, then $\alpha^2 - d\beta^2 > 1$, so if $d < -1$, then $\alpha^2 = 1$. Therefore the only possible solutions are $\alpha = \pm1$ and $\beta = 0$, and so we've shown that if $d\equiv 2$ or $3\bmod 4$ and $d < -1$, then
+First assume $d\equiv 2$ or $3\bmod 4$ and let $\alpha,\beta\in\mathbb Z$ be a solution to $x^2 - dy^2 = \pm 1$. If $d < -1$ and $\beta\not=0$, then $\alpha^2 - d\beta^2 > 1$, so if $d < -1$, then $\beta = 0$ and $\alpha^2 = 1$. Therefore the only possible solutions are $\alpha = \pm1$ and $\beta = 0$, and so we've shown that if $d\equiv 2$ or $3\bmod 4$ and $d < -1$, then
 
 $$\mathscr O_K^\times = \{\pm 1\}.$$
 
@@ -86,7 +86,7 @@ $$\mathscr O_K^\times = \{\pm 1, \pm \sqrt{-1}\}.$$
 
 This finishes the cases when $d\equiv 2$ or $3\bmod 4$.
 
-Now assume $d\equiv 1\bmod 4$, and let $\alpha,\beta\in\mathbb Z$ be a solution to $x^2 - dy^2 = \pm 4$. If $d < -4$ and $\beta \not=0$, then $\alpha^2 - d\beta^2 > 4$, so if $-d > 4$, $\alpha^2 = 4$. Therefore the only possible solutions are $\alpha = \pm 2$ and $\beta = 0$, and so we've shown that if $d \equiv 1 \bmod 4$ and $d < -4$, then
+Now assume $d\equiv 1\bmod 4$, and let $\alpha,\beta\in\mathbb Z$ be a solution to $x^2 - dy^2 = \pm 4$. If $d < -4$ and $\beta \not=0$, then $\alpha^2 - d\beta^2 > 4$, so if $d < -4$, $\beta=0$ and $\alpha^2 = 4$. Therefore the only possible solutions are $\alpha = \pm 2$ and $\beta = 0$, and so we've shown that if $d \equiv 1 \bmod 4$ and $d < -4$, then
 
 $$\mathscr O_K^\times = \left\{\frac{1}{2}(\pm 2)\right\} = \{\pm 1\}.$$
 
@@ -98,7 +98,7 @@ $$\mathscr O_K^\times = \left\{\pm 1, \frac{1 \pm \sqrt{-3}}{2}, \frac{-1 \pm \s
 
 Now that we've determined the units of any imaginary quadratic field, we can use (1) to calculate class numbers. Let's note that if $d = -1$ then $\mu_K = 4$, if $d = -3$ then $\mu_K = 6$, and otherwise $\mu_K = 2$. (Note that $(\frac{1}{2}(1 + \sqrt{-3}))^6 = 1$ so $\frac{1}{2}(1 + \sqrt{-3})$ is a root of unity. Similar relations hold for the other 3 units involving $\sqrt{-3}$.)
 
-At the github repository [here](https://github.com/Joe-Ferrara/IntroToLfunctions), I wrote code to calculate the class numbers. Specifically, the script ``quad_Lfunctions.py`` has a function quad_Lval(d, n), which calculates the first $n$-terms of the sum for the value $L(\chi_D, 1)$. The script ``imag_quad_class_numbers.py`` then calculates the class numbers of $\mathbb Q(\sqrt{d})$ for all $d$ such that $d<0$ and $\left\lvert d\right\rvert < 100$. The class numbers have been recorded in the following table.
+At the github repository [here](https://github.com/Joe-Ferrara/IntroToLfunctions), I wrote code to calculate the class numbers. Specifically, the script ``quad_Lfunctions.py`` has a function ``quad_Lval(d, n)``, which calculates the first $n$-terms of the sum for the value $L(\chi_D, 1)$. The script ``imag_quad_class_numbers.py`` then calculates the class numbers of $\mathbb Q(\sqrt{d})$ for all $d$ such that $d<0$ and $\left\lvert d\right\rvert < 100$. The class numbers are recorded in the following table.
 
 | d | Class Number of $\mathbb Q(\sqrt{d})$ | | d | Class Number of $\mathbb Q(\sqrt{d})$|
 | --- | --- | | --- | --- |

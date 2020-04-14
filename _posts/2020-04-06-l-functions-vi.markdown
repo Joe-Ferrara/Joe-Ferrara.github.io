@@ -4,7 +4,7 @@ title: "Introduction to L-functions VI: (p-adic) Stark's Conjectures"
 comment_issue_id: 6
 ---
 
-The goal of this post is to state some background and say what my thesis is about. Unfortunately, in order to do this, the post must be very technical, and I assume a high level of mathematical background. The reader has been warned. I do try to start out each section with a paragraph or two that gives an idea of what I'm talking about without needing much math background. I also continue the narrative and build off of what I've introduced in previous posts in this series on $L$-functions.
+The goal of this post is to state some background and say what my thesis is about. In order to do this the post must be very technical, and I assume a high level of mathematical background. The reader has been warned. I will start out each section with a paragraph or two that gives an idea of what I'm talking about without needing much math background though. I also continue the narrative and build off of what I've introduced in previous posts.
 
 # Artin $L$-functions
 
@@ -12,7 +12,7 @@ One way to define an $L$-function is to generalize the representation of $\zeta(
 
 $$\zeta(s) = \prod_{p-\text{prime}}\left(1 - \frac{1}{p^s}\right)^{-1}.$$
 
-Since Euler was the first person to consider representing $\zeta(s)$ by the above product formula, this type of representation is called an Euler product. Artin $L$-functions are $L$-functions associated to representations of finite Galois groups, and are defined using an Euler product.
+Since Euler was the first person to consider representing $\zeta(s)$ by the above product formula, this type of representation is called an Euler product. Artin $L$-functions are $L$-functions associated to representations of finite Galois groups, and defined using an Euler product.
 
 Let $K/F$ be a Galois extension of number fields with Galois group $G$, and let
 
@@ -38,13 +38,13 @@ In this example, we can extend $\chi$ to a function on all integers by defining 
 
 $$L(\chi,s) = \sum_{n = 1}^\infty\frac{\chi(n)}{n^s} = \prod_{p-\text{prime}}\left(1 - \frac{\chi(p)}{p^s}\right)^{-1}.$$
 
-We recover the example $L(\chi_{-4},s)$ by defining $\chi_{-4}$ as
+We recover the example from my previous posts, $L(\chi_{-4},s)$, by defining $\chi_{-4}$ as
 
 $$\chi_{-4}:\text{Gal}(\mathbb Q(i)/\mathbb Q) \cong (\mathbb Z/4\mathbb Z)^\times\longrightarrow \mathbb C^\times$$
 
 $$\chi_{-4}(3 + 4\mathbb Z) = -1, \chi_{-4}(1 + 4\mathbb Z) = 1.$$
 
-I'll finish this section by noting that these Euler products and $L$-series do not converge for all $s\in\mathbb C$. They only converge for $s$ with large enough real part, usually $\text{Re}(s) > 1$ will do. Artin's conjecture states that if $\chi$ is not the trivial character, then $L(\chi,s)$ has an analytic continuation to all of $\mathbb C$, and satisfies a functional equation relating $L(\chi,s)$ and $L(\overline{\chi},s)$. Artin's conjecture is known when the extension $K/F$ is abelian, but is open in general. It is known though that $L(\chi,s)$ has a meromorphic continuation to all of $\mathbb C$ and satisfies a functional equation.
+The Euler products in the definition of Artin $L$-functions do not converge for all $s\in\mathbb C$ just as the one for the Riemann zeta function doesn't. The Euler products converge for $s$ with large enough real part, and usually $\text{Re}(s) > 1$ will do. Artin's conjecture states that if $\chi$ is not the trivial character, then $L(\chi,s)$ has an analytic continuation to all of $\mathbb C$, and satisfies a functional equation relating $L(\chi,s)$ and $L(\overline{\chi},s)$. Artin's conjecture is known when the extension $K/F$ is abelian, but is open in general. It is known though that $L(\chi,s)$ has a meromorphic continuation to all of $\mathbb C$ and satisfies a functional equation.
 
 # Stark's Conjectures
 
@@ -56,19 +56,19 @@ $$\lambda:\mathscr O_K^\times\longrightarrow \mathbb R X = \mathbb R\otimes_\mat
 
 $$\lambda(u) =  \sum_{v\in S_\infty}\log\left\lvert u\right\rvert_v v,$$
 
-where $\left\lvert u\right\rvert_v = \left\lvert v(u)\right\rvert$ if $v$ is real and $\left\lvert u\right\rvert_v = \left\lvert v(u)\right\rvert^2$ if $v$ is complex. Dirichlet's equivariant unit theorem says after tensoring with $\mathbb C$, $\lambda$ is an isomorphism. Then by character theory, there exists a $G$-equivariant isomorphism $f:\mathbb Q X = \mathbb Q\otimes_\mathbb Z X\longrightarrow \mathbb Q\mathscr O_K^\times = \mathbb Q\otimes_\mathbb Z\mathscr O_K^\times$. Fix such an $f$.
+where $\left\lvert u\right\rvert_v = \left\lvert v(u)\right\rvert$ if $v$ is real and $\left\lvert u\right\rvert_v = \left\lvert v(u)\right\rvert^2$ if $v$ is complex. Dirichlet's equivariant unit theorem says that after tensoring with $\mathbb C$, $\lambda$ is an isomorphism. Then by character theory, there exists a $G$-equivariant isomorphism $f:\mathbb Q X = \mathbb Q\otimes_\mathbb Z X\longrightarrow \mathbb Q\mathscr O_K^\times = \mathbb Q\otimes_\mathbb Z\mathscr O_K^\times$. Fix such an $f$.
 
-Let $r(\chi)$ be the order vanishing of $L(\chi,s)$ at $s = 0$ and let $c(\chi)$ be the leading term of the Taylor expansion of $L(\chi,s)$ at $s = 0$. In this formalism, the $G$-module $\text{Hom}\_G(V^{\*}, \mathbb C X)$ is playing the role of the part of $\mathscr O_K^\times$ that corresponds to $\rho$. This replacement makes sense since after tensoring with $\mathbb C$, $\lambda$ is a $G$-equivariant isomorphism. It turns out that the $\mathbb C$-dimension of $\text{Hom}\_G(V^{\*}, \mathbb C X)$ is $r(\chi)$, where $V^\*$ is the $\mathbb C$-linear dual of $V$, which shows a connection between $L(\chi,s)$ at $s=0$ and $\text{Hom}\_G(V^{\*}, \mathbb C X)$. The connection is conjectured to be deeper.
+Let $V^\*$ be the $\mathbb C$-linear dual to $V$ with the contravariant $G$-action. The $G$-module $\text{Hom}\_G(V^{\*}, \mathbb C X)$ corresponds to the part of $\mathscr O_K^\times$ corresponding to $\rho$. This makes sense since after tensoring with $\mathbb C$, $\lambda$ is a $G$-equivariant isomorphism. Let $r(\chi)$ be the order vanishing of $L(\chi,s)$ at $s = 0$ and let $c(\chi)$ be the leading term of the Taylor expansion of $L(\chi,s)$ at $s = 0$.  It turns out that the $\mathbb C$-dimension of $\text{Hom}\_G(V^{\*}, \mathbb C X)$ is $r(\chi)$, which shows a connection between $L(\chi,s)$ at $s=0$ and $\text{Hom}\_G(V^{\*}, \mathbb C X)$. The connection is conjecturally much deeper.
 
 Define the Stark regulator of $\chi$ and $f$ as the determinant of the map
 
 $$(\lambda\circ f)_{V^*}:\text{Hom}_G(V^*,\mathbb C X)\longrightarrow \text{Hom}_G(V^*,\mathbb C X).$$
 
-The regulator is denoted by $R(\chi, f)$. Stark's conjecture is that the ratio $\frac{R(\chi, f)}{c(\chi)}$ (which is a complex number) is in the subfield of $\mathbb C$ generated by the values of $\chi$. This field is denoted $\mathbb Q(\chi)$. The Stark regulator $R(\chi, f)$, or the normal regulator $\text{Reg}_K$, is a determinant of a matrix of logarithms of algebraic numbers, so it is highly transcendental. Stark's conjecture states that $R(\chi, f)$ is the transcendental part of the leading term of $L(\chi, s)$ at $s = 0$, and that the ratio, $\frac{R(\chi,f)}{c(\chi)}$ is an algebraic number in the field $\mathbb Q(\chi)$.
+The regulator is denoted by $R(\chi, f)$. Stark's conjectures are that the ratio $\frac{R(\chi, f)}{c(\chi)}$ (which is a complex number) is in the subfield of $\mathbb C$ generated by the values of $\chi$. This field is denoted $\mathbb Q(\chi)$. The Stark regulator $R(\chi, f)$, or the normal regulator $\text{Reg}_K$, is a determinant of a matrix of logarithms of algebraic numbers, so it is highly transcendental. Stark's conjectures state that $R(\chi, f)$ is the transcendental part of the leading term of $L(\chi, s)$ at $s = 0$, and that the ratio, $\frac{R(\chi,f)}{c(\chi)}$ is an algebraic number in the field $\mathbb Q(\chi)$.
 
 # $p$-adic Stark's Conjectures
 
-In this this section I'll explain what a $p$-adic $L$-function is in the context of my research, and give some of the ideas of my research. Vaguely, a $p$-adic $L$-function is a function of a $p$-adic variable that is related to a complex $L$-function in some way. Given a complex $L$-function, it many cases it is not clear how to define the corresponding $L$-function. The existence of $p$-adic $L$-functions is an area of current research in number theory. In many of the cases that $p$-adic $L$-functions are defined, they have been shown to satisfy similar properties to complex $L$-functions. In particular, there should be a way to state $p$-adic Stark's conjectures that are similar to the conjectures in the previous section but use the $p$-adic logarithm instead of the normal logarithm. The goal of my thesis was is to define a $p$-adic $L$-function in the case when $\chi$ is the character of a mixed signature abelian extension of a real quadratic field or a nontrivial character of an abelian extension of an imaginary quadratic field, and to state a $p$-adic Stark conjecture for the $p$-adic $L$-function.
+In this this section I'll explain what a $p$-adic $L$-function is in the context of my research, and give some of the ideas of my research. Vaguely, a $p$-adic $L$-function is a function of a $p$-adic variable that is related to a complex $L$-function in some way. Given a complex $L$-function, in many cases it is not clear how to define the corresponding $p$-adic $L$-function, and the existence of $p$-adic $L$-functions is an area of current research in number theory. In many of the cases where $p$-adic $L$-functions are defined, they have been shown to satisfy similar properties to complex $L$-functions. In particular, there should be a way to state $p$-adic Stark's conjectures that are similar to the conjectures in the previous section but use the $p$-adic logarithm instead of the normal logarithm. The goal of my thesis was is to define a $p$-adic $L$-function in the case when $\chi$ is the character of a mixed signature abelian extension of a real quadratic field or a nontrivial character of an abelian extension of an imaginary quadratic field, and to state a $p$-adic Stark conjecture for the $p$-adic $L$-function.
 
 If you've never seen the $p$-adic numbers before, then here is a super brief description. Let $p$ be a prime number. The $p$-adic rational numbers, denoted $\mathbb Q_p$, are a set that contains the rational numbers as a subset, and that "fills in the holes" in the rational numbers with respect to a certain way of measuring distance in $\mathbb Q$. The $p$-adic numbers are analogous to the real numbers in this filling the holes property. The real numbers fill in the holes that exist when we measure the distance between rationals by the usual notion of distance between two numbers. For the $p$-adic numbers, we measure the distance between two integers by saying two integers are close if their difference is divisible by a large power of $p.$ This is then extended to all rational numbers by representing rational numbers as the fraction of two integers. In mathematical terminology, we say that $\mathbb Q_p$ and $\mathbb R$ are completions of $\mathbb Q$ with respect to the $p$-adic and real metric. We denote $\mathbb Z_p$ as the completion of $\mathbb Z$ with respect to the $p$-adic metric, and we denote the completion of the algebraic closure of $\mathbb Q_p$ by $\mathbb C_p$. $\mathbb C_p$ is analogous to the complex numbers, $\mathbb C$, because $\mathbb C_p$ is a complete and algebraically closed field. Just like for the real or complex numbers, we consider continuous, analytic, and meromorphic functions with domain and codomain, $\mathbb Z_p,\mathbb Q_p$, or $\mathbb C_p.$
 
@@ -104,7 +104,7 @@ I should say something as well about the case when $F$ is imaginary quadratic. W
 
 <a name="DDP">[DDP]</a> S. Dasgupta, H. Darmon, R. Pollack, *Hilbert modular forms and the Gross-Stark conjecture*, Ann. of Math., **174**(1) (2011), 439-483.
 
-<a name="DKV">[DKV]</a> S. Dasgupta, M. Kakde, K. Ventullo, *On the Gross-Stark conjecture*, preprint.
+<a name="DKV">[DKV]</a> S. Dasgupta, M. Kakde, K. Ventullo, *On the Gross-Stark conjecture*, Ann. of Math., **188** (2018), no. 3, 833-870.
 
 <a name="DR">[DR]</a> P. Deligne, K. Ribet, *Values of abelian $L$-functions at negative integers over totally real fields*, Inventiones Math., **59** (1980), 227-286.
 
