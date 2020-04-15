@@ -8,7 +8,7 @@ During my postdoc, I've done research involving the mathematical objects called 
 
 It turns out that programming codes that use Drinfeld modules is a bit more complicated than I initially hoped. While possible, these codes require a lot of technical mathematics groundwork be programmed, and so I've decided to put off that goal for now.
 
-One the other hand, while learning the basics of coding theory I did program two canonical examples of codes, the Hamming codes and Reed-Solomon codes. This post and my following two posts are write ups that build coding theory from the ground up in order to understand the scripts I wrote for Hamming codes and Reed-Solomon codes which can be found [here](https://github.com/Joe-Ferrara/CodingTheoryIntro).
+On the other hand, while learning the basics of coding theory I did program two canonical examples of codes, the Hamming codes and Reed-Solomon codes. This post and my following two posts are write ups that build coding theory from the ground up in order to understand the scripts I wrote for Hamming codes and Reed-Solomon codes which can be found [here](https://github.com/Joe-Ferrara/CodingTheoryIntro).
 
 In writing the posts, I've assumed the reader is familiar with linear algebra over finite fields (one only really needs to be familiar with linear algebra over the prime field $\mathbb F_p = \mathbb Z/p\mathbb Z$), and for the Reed-Solomon codes post, polynomials over finite fields. Otherwise, everything is fleshed out and explained. In this first, post I lay the mathematical framework of coding theory.
 
