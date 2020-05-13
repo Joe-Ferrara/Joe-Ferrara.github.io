@@ -4,17 +4,21 @@ title:  Predicting NBA Games
 comment_issue_id: 10
 ---
 
-The goal of this project is to use machine learning algorithms to predict the outcomes of NBA games. The models used are logistic regression and a multilayer perceptron neural network. The dataset is game statistics from the 12 NBA seasons ranging from 2007 through 2019. As a baseline model, naive predictions are made based on the winning percentages and average points scored of the teams going into the games. The predictions made by all of the models are compared to the predictions made by Las Vegas when setting odds for people to bet on games during the time period.
 
-The data and code for the project are found [here](https://github.com/Joe-Ferrara/predicting-nba-games).
+
+In this post I compare how different machine learning algorithms do at predicting the outcomes of NBA games. The post is inspired by the paper, *Exploiting sports-betting market using machine learning*, by Hubáček, Šourek, and Železný ([[HSZ]](#HSZ)), where they use logistic regression and neural network models to predict the outcomes of basketball games, and then devise a betting strategy based on their models. In my following post I plan to explore possible betting strategies using the models from this post.
+
+The models used in this post are logistic regression, a support vector machine, nearest neighbors, and a multilayer perceptron neural network. The dataset used is game statistics from the 12 NBA seasons 2007-08 through 2019-20. Each model is used on player only statistics, team only statistics, and the combination of player and team statistics. The predictions from each type of statistics is then compared. As a baseline model, naive predictions are made using the winning percentages and average points scored of the home and away teams. A dataset of Las Vegas betting odds from the same time period of NBA games is also analyzed. The predictions made by all of the models are compared to the predictions made by the Las Vegas odds.
+
+The data and code for the project are found on my github page [here](https://github.com/Joe-Ferrara/predicting-nba-games).
 
 ## The Data
 
 # NBA Games Data
 
-The NBA game results data was found on kaggle.com, [here](https://www.kaggle.com/nathanlauga/nba-games). Thanks to Nathan Lauga for posting it. The NBA games data contains team and player results and statistics from every NBA preseason, regular season, and postseason game during the time period from the beginning of the 2004-05 season to February 2020.
+The NBA game statistics data was found on kaggle.com, [here](https://www.kaggle.com/nathanlauga/nba-games). Thanks to Nathan Lauga for posting it. The data contains team and player statistics from every NBA preseason, regular season, and postseason game from the 2004-05 season through February of the 2019-20 season.
 
-The file, *games.csv*, has one row for each game, with columns giving the game identifiers, home team statistics and away team statistics. For example, here are the game identifiers and home team statistics for the first five rows:
+The file, *games.csv*, has one row for each game, with columns giving game identifiers, home team statistics, and away team statistics. For example, here are the game identifiers and home team statistics from the first five rows:
 
 |   GAME_ID | DATE            |   SEASON |   HOME_TEAM_ID |   PTS_home |   FG_PCT_home |
 |----------:|:----------------|---------:|---------------:|-----------:|--------------:|
@@ -32,7 +36,7 @@ The file, *games.csv*, has one row for each game, with columns giving the game i
 |         0.7   |          0.5   |         38 |         41 |                1 |
 |         0.885 |          0.257 |         18 |         51 |                1 |
 
-An important feature to note is the ``HOME_TEAM_WINS`` column, which says whether or not the home team won the game. This is the column that will be predicted.
+The ``HOME_TEAM_WINS`` column, which says whether or not the home team won the game, is the column of interest to be predicted.
 
 The file, *games_details.csv*, has the player statistics. It has one row for each (game, player) pair, and has columns giving (game, player) identifiers, and player statistics for that game. An example of some of the (game, player) identifiers and player statistics follows:
 
@@ -44,7 +48,7 @@ The file, *games_details.csv*, has the player statistics. It has one row for eac
 |  21900895 | MIL        |     1628978 | 27:35 |     1 |     5 |     2 |     7 |     5 |
 |  21900895 | MIL        |      202339 | 22:17 |     2 |     8 |     4 |     1 |     2 |
 
-To predict outcomes of games, the data was aggregated to contain teams and players running stats from all previous games each season. The new aggregated data has in each row the average and total stats for each team or player going into the game in question. The script *regular_season_stats_averages_and_totals.py* contains the code used to create these running statistics. The files, *teams_running.csv* and *players_running.csv* contain the aggregated running statistics in addition to the statistics in *games.csv* and *games_details.csv*. A slice of *teams_running.csv* with some of the home team statistics follows:
+To predict outcomes of games, this data was aggregated to contain teams and players cumulative statistics from all previous games each season. The new cumulative data has one row for each game with the average and total stats for each team and player going into the game. The script *regular_season_stats_running_and_totals.py* creates the cumulative statistics from *games.csv* and *games_details.csv*. The files, *teams_running.csv* and *players_running.csv* contain the cumulative statistics as well as the statistics in *games.csv* and *games_details.csv*. A slice of *teams_running.csv* with some of the home team statistics follows:
 
 
 |   GAME_ID | HOME   |   HOME_WINS |   HOME_LOSSES |   HOME_WIN_PCT |
@@ -73,13 +77,13 @@ Here is a slice of *players_running.csv* with some of the player statistics goin
 |  21900895 | MIL         | 1628978     |   22.7954 |  9.05556 |   4.81481 |   2.16667 |
 |  21900895 | MIL         | 202339      |   27.248  | 15.6667  |   4.82353 |   5.47059 |
 
-There are two other files, *teams_totals.csv* and *players_totals.csv*, that contain the end of the year statistics for each team and player. Some random rows from these csv's were cross-checked with the statistics at [basketball-reference.com](https://www.basketball-reference.com/) to ensure that no mistakes were made when in calculating the running statistics. To my knowledge the running statistics of a team or player from a specific date in a season are not publicly available, so I could not check the running statistics directly.
+The files *teams_totals.csv* and *players_totals.csv* contain the end of the year statistics for each team and player. Some random rows from these datasets were cross-checked with the statistics at [basketball-reference.com](https://www.basketball-reference.com/) to ensure that no mistakes were made when in calculating the cumulative statistics. To my knowledge the cumulative statistics of a team or player from a specific date during a season are not publicly available, so the cumulative statistics could not be checked directly.
 
-In order to easily use all of these statistics to predict games, the two running  datasets were merged into one dataset that contains for each game the running team statistics and player statistics for every player that appeared in the game. The player columns were numbered from player 1 to player 16, and ordered by points per game average so that later on it would be easy to discard the inconsequential players. The script that merges the two running statistics datasets is *merging_and_cleaning_stats.py*, which outputs the merged dataset as the file *full_stats.csv*.
+In order to easily use all of these statistics to predict games, *teams_running.csv* and *players_running.csv* were merged into one dataset that contains for each game the cumulative team and player statistics. The player columns were numbered from player 1 to player 16, and ordered by minutes played in the game the row represents. The script that merges *teams_running.csv* and *players_running.csv* is *merge_player_team.py*, which outputs the merged dataset as *full_stats_running.csv*.
 
-# Betting Data: How good is Vegas at predicting NBA games?
+# Betting Odds Data
 
-The betting odds data used was found at the website sportsbookreviewsonline.com, [here](https://www.sportsbookreviewsonline.com/scoresoddsarchives/nba/nbaoddsarchives.htm). It contains the betting odds from all regular and postseason games from the 2007-08 season through the current 2020 season. For each game, the odds data contains the closing over/under, closing spread, and closing money line for each team. This data is organized as one csv file for each season. The 2007-08 season csv is titled *nba_odds_2007-08.csv* with the other seasons titled similarly. The first four games in the 2007-08 season are recorded in the csv as follows:
+The betting odds data was found at the website sportsbookreviewsonline.com, [here](https://www.sportsbookreviewsonline.com/scoresoddsarchives/nba/nbaoddsarchives.htm). It contains the betting odds for all regular and postseason games from the 2007-08 season through March of the 2019-20 season. For each game, the odds data contains the closing over/under, spread, and money lines odds. The data is organized as one csv file for each season. The 2007-08 season csv is titled *nba_odds_2007-08.csv* with the other seasons titled similarly. The first four games in the 2007-08 season are recorded as follows:
 
 |   Date | VH   | Team         |   Final |   Close |    ML |
 |-------:|:-----|:-------------|--------:|--------:|------:|
@@ -94,7 +98,7 @@ The betting odds data used was found at the website sportsbookreviewsonline.com,
 
 Every two rows corresponds to one game with the away team as the first row and the home team as the second. The ``Close`` column has the over/under as the larger number, and the spread for the game in the row of the favored team. The ``ML`` column has the money line for each of the teams.
 
-This data was organized into a csv with one row for each game, as well as the date and team names labeled the same as the csv's from the NBA games data section. The betting odds are also translated into predictions for the score of the game and the probability of the home team winning. The script that creates the new odds csv is *clean_odds_data.py*. It outputs a file for each season. The file for the 2007-08 season is titled *odds_2007.csv*, and the other seasons are titled similarly. The organized data for the first four games is as follows:
+The odds data was organized into a new csv with one row for each game, and with the date and team names labeled as in *full_stats_running.csv*. In the new csv, the odds are translated into predictions for the score of the game and the probability of each team winning. The script that creates the new csv is *clean_odds_data.py*. It outputs one file for each season. The file for the 2007-08 season is titled *odds_2007.csv*, with the others titled similarly. The new files look as follows (these are the rows that correspond to the same four games as above):
 
 | DATE       | HOME   | AWAY   |   HOME_PTS |   AWAY_PTS |   HOME_WINS |
 |:-----------|:-------|:-------|-----------:|-----------:|------------:|
@@ -110,21 +114,35 @@ This data was organized into a csv with one row for each game, as well as the da
 |           97    |          102    |                0 |        0.344828 |
 |           98.75 |           92.25 |                1 |        0.753086 |
 
-The script *odds_analysis.py* does some analysis on how well Vegas predicts the outcomes of the games during this time period. In the data there are 15211 games. Of these games, Vegas correctly predicted the winner 68.25% of the time.
+# How good is Vegas at predicting NBA games?
 
-There are some other interesting statistics from the Vegas odds data, though these statistics will not be used anywhere else in the project. The average score (home or away) error is 8.41 points, with 66.62% of the score predictions being within 10 points. 308 times either the home or away team's score is predicted exactly correct. 2 times both the home and away teams score in the same game is predicted correctly. The average spread error is 6.98 points, with 35.26% of the spread predictions within 3 points. The average over/under prediction error is 13.83 points, with 45.65% of the over/under predictions within 10 points.
+The script *odds_analysis.py* does some analysis on how well Vegas predicts the outcomes of the games during this time period. In the data there are 15,211 games. Of these games, Vegas correctly predicted the winner 68.25% of the time.
+
+The average score (home or away) error is 8.41 points, with 66.62% of the score predictions being within 10 points. 308 times either the home or away team's score is predicted exactly correct. Twice both the home and away teams score in the same game is predicted correctly. The average spread error is 6.98 points, with 35.26% of the spread predictions within 3 points. The average over/under prediction error is 13.83 points, with 45.65% of the over/under predictions within 10 points.
 
 ## Models and Predictions
 
-# Model Preprocessing
+# Pre-processing
 
-The first 10 games of the season were taken out of the data for small sample size reasons. In these cases, there are not enough games earlier in the season for the data to have any hope of being predictive. The years before 2007 were taken out of the NBA games data to make the years of the NBA games data match the years of odds data. Also, any preseason and postseason games were removed from the datasets.
+In this section, I record the pre-processing that was done to all the data before making predictions along with some explanation for the conventions.
 
-For each game only the top 8 players in order of average points on each team were kept, so only the more relevant players are considered.
+The first 10 games of each season for each team were taken out of the data for small sample size reasons. One could not hope to make good predictions based on the statistics during before these games.
 
-For the logistic regression and multi-layer perceptron models, the 2018-19 and 2019-20 games data was held out as a test set. The 2007-08 through 2017-18 seasons data was split 80%, 20% for training and validation. On the other hand, the naive models were run on all the games data since there is no training and validation in these models.
+To make the betting odds data and NBA games data match, the years before 2007 were taken out of the NBA games data, and any preseason and postseason games were removed from the NBA games data and betting odds data.
 
-For the multi-layer perceptron model, the data was scaled using ``StandardScaler`` from ``sklearn.preprocessing`` to make the columns have mean 0 and values in the range -1 to 1.
+For each game and each team, only the top 9 players in order of minutes played were kept. This way only the more relevant players statistics are considered. One may disagree with the convention to apriori keep players based on their minutes played in the game one wants to predict. The reason for this convention is to attempt to recreate the information one has at the beginning of the game about the players that will play in the game. Using cumulative stats to decide which players to keep for each game do not capture when a player misses a game due to injury or suspension, while someone betting on the game (as well as Las Vegas when making the closing odds) has this information. A serious basketball fan could predict at the beginning of a game with good accuracy which 8 players on a team would play the highest minutes.
+
+The script *pre_processing.py* does all to the *full_stats_running.csv* dataset, and then creates input and output dataframes to input into the machine learning models. It creates one input dataframe for player statistics, one for team statistics, and one for player and team statistics. The output dataframe is the column of *full_stats_running.csv* that says whether or not the home team won the game. This script also does the training, validation, and test splitting of the data, which is discussed in the following section.
+
+The support vector machine and multi-layer perceptron models have the extra pre-processing step of the scaling the features to make them uniform. The data was scaled using ``StandardScaler`` from ``sklearn.preprocessing`` to make the columns have mean 0 and variance 1.
+
+# Training and Validation
+
+The naive models were run on all the games since there is no training and validation for these models.
+
+For the machine learning models, the 2018-19 and 2019-20 seasons were held out as a test set, and the 2007-08 through 2017-18 seasons were split 80%, 20% for training and validation respectively. In the training, validation, and test data there are 9,113 games, 2,279 games, and 1,790 games respectively.
+
+For each of the machine learning models, the model hyperparameters were tuned using the training and and validation data to avoid overfitting and underfitting. Each model has it's own script that does this, with obvious naming conventions. The script *test.py* runs all the models with the determined hyperparameters on the training, validation, and test data. For each of these models we record the percent correct on the training, validation, and test data.
 
 # Naive Models
 
@@ -135,7 +153,7 @@ There are three naive prediction models:
 
 The script that carries out the naive models is *naive_predictions.py*.
 
-The results of these baseline models and the Vegas odds predictions are recorded in the following table:
+The results of baseline models and the Vegas odds predictions are recorded in the following table:
 
 | Prediction Method | Percent Correct |
 |-------------------|--------------------|
@@ -144,7 +162,7 @@ The results of these baseline models and the Vegas odds predictions are recorded
 | Point Differential| 65.49%             |
 | Points Per Game   | 58.94%             |
 
-Each of the naive models was also done using home and away splits for each team instead of the total average. This means for the home team, only their previous home game averages were used, and for the away team, only their previous away game averages. The results with the home and away splits are in the following table:
+Each of the naive models was also run using home and away splits for each team instead of the total average. This means for the home team, only their previous home game averages were used, and for the away team, only their previous away game averages. These are the results with the home and away splits:
 
 | Using home and away splits | Percent Correct |
 |------------------------|-----------------|
@@ -152,73 +170,62 @@ Each of the naive models was also done using home and away splits for each team 
 | Point Differential     | 57.58%          |
 | Points per Game        | 55.35%          |
 
-Point differential and points per game using the home and away splits did worse, while when using winning percentage the home and away splits did slightly better.
-
-In general, I was surprised how close the naive method of prediction by winning percentage is to the Vegas odds predictions.
-
 # Logistic Regression
 
-A logistic regression model was run on 3 different groups of statistics:
-* Player statistics: All the player average statistics in *full_stats.csv*.
-* Team statistics: All the team statistics in *full_stats.csv*.
-* Player and team statistics: Combination of the player and team statistics.
+``LogisticRegression`` from ``sklean.linear_model`` was used with the default parameters.
 
-The script for the logistic regression model is *logistic_regression.py*. The model used is ``LogisticRegression`` from ``sklean.linear_model`` with the default parameters.
+|Stats Group \  Percent Correct|Training Data|Validation Data|Test Data|
+|-----------|----------|----------|----------|
+|Player     | 70.57% | 67.40% | 73.63% |
+|Team       | 67.68% | 67.79% | 67.09% |
+|Player and Team | 70.67% | 68.19% | 73.91% |
 
-The results from the logistic regression model are recorded in the following table:
+# Nearest Neighbor
 
-|Statistics<br>Group|Training Data<br>Percent Correct|Validation Data<br>Percent Correct|
-|-----------|----------|----------|
-|Player     | 70.43%   | 68.93%   |
-|Team  | 67.64%   | 67.79%   |
-|Player and <br> Team | 70.51% | 69.42% |
+``KNeighborsClassifier`` from ``sklearn.neighbors`` was used with the number of neighbors parameter, ``n_neighbors=100``.
 
-The player, as well as player and team statistics, narrowly beat Vegas on the validation data. The training and validation numbers are good and close, evidence of little overfitting or underfitting.
+|Stats Group \  Percent Correct|Training Data|Validation Data|Test Data|
+|-----------|----------|----------|----------|
+|Player     | 67.92% | 66.78% | 66.42% |
+|Team       | 68.32% | 67.49% | 67.04% |
+|Player and Team | 68.44% | 67.53% | 67.09% |
 
-# Multi-layer Perceptron
+# Support Vector Machine
 
-The multi-layer perceptron model was run on the same three groups of statistics as the logistic regression model. The model used is ``MLPClassifier`` from ``sklearn.neural_network``. The parameters of the model were tuned to obtain optimal results. The activation parameter functions *relu*, *tanh*, and *logistic* were all tried with *tanh* giving the best results. Various numbers of layers, hidden layer sizes, and values for the *alpha* parameter were systematically searched.
+``LinearSVC`` from ``sklearn.svm`` with regularization parameter ``C=1`` was used. Note: Various nonlinear support vector machines were used on the training and validation data, all performing similarly or worse than the linear support vector machine.
 
-It was difficult to find parameters that beat the Vegas odds on the training and validation sets. The following four model parameters were settled on as the best:
-* MLP 1: ``alpha = 1000, hidden_layer_sizes = (100, 75, 50), activation = 'tanh'``
-* MLP 2: ``alpha = 1000, hidden_layer_sizes = (100, 100, 100), activation = 'tanh'``
-* MLP 3: ``alpha = 900, hidden_layer_sizes = (100, 75, 50), activation = 'tanh'``
-* MLP 4: ``alpha = 900, hidden_layer_sizes = (100, 100, 100), activation = 'tanh'``
+|Stats Group \  Percent Correct|Training Data|Validation Data|Test Data|
+|-----------|----------|----------|----------|
+|Player     | 70.59% | 67.44% | 73.46% |
+|Team       | 67.85% | 67.88% | 66.98% |
+|Player and Team | 70.67% | 68.32% | 73.41% |
 
-The performance of these models on the training and validation data is recorded in the following table:
+# Multi-layer Perceptron (MLP)
 
-| Model | Statistics Used| Training Data<br>Percent Correct|Validation Data<br>Percent Correct|
-|-------|--------------|------------|--------------------------|
-| MLP 1 | Player | 59.17% | 59.46% |
-|       | Team | 59.17% | 59.46% |
-|       | Player and Team | 68.29% | 68.58% |
-| MLP 2 | Player | 67.20% | 66.70% |
-|       | Team | 59.17% | 59.46% |
-|       | Player and Team | 68.24% | 68.63% |
-| MLP 3 | Player | 68.30% | 66.34% |
-|       | Team | 59.17% | 59.46% |
-|       | Player and Team | 68.68% | 68.76% |
-| MLP 4 | Player | 68.28% | 66.43% |
-|       | Team | 59.17% | 59.46% |
-|       | Player and Team | 68.85% | 65.98% |
+Details of the model parameters: The model has 5 dense layers with the first through fifth layer having 100, 100, 50, 25, and 10 neurons respectively. For these 5 dense layers the activation function *tanh* is used. The output layer has 1 neuron with activation function *sigmoid* since binary classification is being done. For regularization, a dropout rate of 0.2 is used for each dense layer and an l2 regularization rate of 0.004 is used for every layer.
 
-These numbers show that for the multi-layer perceptron model, using just the team statistics does worse than using players or players and teams. MLP 1, 2, and 3 beat the Vegas odds on the validation data when the player and team statistics are used.
+The model was made and ran using ``keras`` with the ``tensorflow`` backend.
 
-One weird phenomenon from the numbers is that some of the MLP models are performing better on the validation set than the training set. While this is possible, I am not sure why it is happening. It could be a combination of the facts that the parameters are tuned to minimize overfitting and that the validation set is too small.
+|Stats Group \  Percent Correct|Training Data|Validation Data|Test Data|
+|-----------|----------|----------|----------|
+|Player     | 70.12% | 67.49% | 65.25% |
+|Team       | 66.68% | 66.74% | 65.70% |
+|Player and Team | 69.78% | 67.13% | 67.04% |
 
-# Results on Test Data
+## Conclusions
 
-On the test data, all 4 MLP models were run. MLP 3 performed best on training and validation, as well as on the test data for all three statistical categories, so only MLP 3 is recorded in the following table comparison between the MLP model and logistic regression:
+All the models except the player MLP and team MLP models beat the best naive model. The player and the player and team logistic regression and support vector machine models beat the betting odds predictions on the test data, but the logistic regression and support vector machine numbers are a bit odd since the percentages on the test data are higher than the percentages on training and validation data. This is perhaps due to randomness, and the fact that the test data is relatively small. Another possible explanation is that the models are better at predicting some seasons over other seasons. A more season by season analysis is something to explore in the future, and could help explain this phenomenon.
 
-| Model | Player Stats | Team Stats | Player and Team<br>Stats |
-|----------|----------|----------|----------|
-| Logistic Regression | 65.87% | 65.64% | 66.31% |
-| MLP  | 65.75% | 57.54% | 66.03% |
+In general, the models all performed better when using the player and the player and team statistics over using just the team statistics. This is not surprising because the player statistics are more detailed and numerous.
 
-Both models had significant drops from the validation data to the test data. This could be because teams may develop a certain statistical profile throughout a season causing in season prediction to be easier than cross-season prediction. The models may have generalized better to the validation data than the test data because the training data and validation data both contain the same seasons.
+It is interesting that all of the models performed similarly on the training and validation data; none of them beating the betting odds predictions. The fact that all the models perform similarly suggests they are all finding similar patterns in the data, with logistic regression and the support vector machine perhaps doing a slightly better job.
 
-MLP and logistic regression beat the best naive model when using player statistics and player and team statistics.
+The numbers on the predictions here are consistent with the survey of related work on the subject in section 2 of [[HSZ]](#HSZ) as well as being consistent with the predictions made in [[HSZ]](#HSZ).
 
-# Future Work
+## Future Work
 
-This projects lends itself to many future possibilities. One is to create more advanced statistics than just the ones considered. For instance, using the game dates, one could put the number of days off before the game into the datasets. More advanced team statistics can also be obtained by aggregating the player statistics for each team. A second direction to pursue is to add a convolution layer to the neural network. This could potentially use the player stats in a more efficient and interesting manner. A third direction is to consider more of the Vegas odds data and the probabilities predicted by the models to derive a betting strategy that could win a potential bettor money.
+There are many directions for future work with the project. One direction  is to do a finer analysis of the logistic regression and multi-layer perceptron models' predictions by considering the probabilities they output versus just rounding the probabilites to predict whether or not the home team will win. A way to do this would be to compare the probabilities the models output with the probabilities from the betting odds in order to devise a betting strategy. This is done in [[HSZ]](#HSZ), and I plan to explore betting possibilities in my next post.
+
+# Reference
+
+<a name="HSZ">[HSZ]</a> O. Hubáček, G Šourek, F. Železný, *Exploiting sports-betting market using machine learning*, International Journal of Forecasting, **35** (2019), 783-796.
