@@ -83,7 +83,7 @@ In order to easily use all of these statistics to predict games, *teams_running.
 
 # Betting Odds Data
 
-The betting odds data was found at the website sportsbookreviewsonline.com, [here](https://www.sportsbookreviewsonline.com/scoresoddsarchives/nba/nbaoddsarchives.htm). It contains the betting odds for all regular and postseason games from the 2007-08 season through March of the 2019-20 season. For each game, the odds data contains the closing over/under, spread, and money lines odds. The data is organized as one csv file for each season. The 2007-08 season csv is titled *nba_odds_2007-08.csv* with the other seasons titled similarly. The first four games in the 2007-08 season are recorded as follows:
+The betting odds data was found at the website sportsbookreviewsonline.com, [here](https://www.sportsbookreviewsonline.com/scoresoddsarchives/nba/nbaoddsarchives.htm). It contains the betting odds for all regular and postseason games from the 2007-08 season through March of the 2019-20 season. For each game, the odds data contains the closing over/under, spread, and money line odds. The data is organized as one csv file for each season. The 2007-08 season csv is titled *nba_odds_2007-08.csv* with the other seasons titled similarly. The first four games in the 2007-08 season are recorded as follows:
 
 |   Date | VH   | Team         |   Final |   Close |    ML |
 |-------:|:-----|:-------------|--------:|--------:|------:|
@@ -124,25 +124,25 @@ The average score (home or away) error is 8.41 points, with 66.62% of the score 
 
 # Pre-processing
 
-In this section, I record the pre-processing that was done to all the data before making predictions along with some explanation for the conventions.
+Various pre-processing is done to the data above before it is input to the machine learning algorithms. Here I explain the pre-processing done and  the conventions used.
 
-The first 10 games of each season for each team were taken out of the data for small sample size reasons. One could not hope to make good predictions based on the statistics during before these games.
+The first 10 games of each season for each team were taken out of the data for small sample size reasons. The cut off of 10 games seems like a reasonable number because it eliminates games with minimal entering cumulative statistics without eliminating a substantial portion of the total games.
 
 To make the betting odds data and NBA games data match, the years before 2007 were taken out of the NBA games data, and any preseason and postseason games were removed from the NBA games data and betting odds data.
 
-For each game and each team, only the top 9 players in order of minutes played were kept. This way only the more relevant players statistics are considered. One may disagree with the convention to apriori keep players based on their minutes played in the game one wants to predict. The reason for this convention is to attempt to recreate the information one has at the beginning of the game about the players that will play in the game. Using cumulative stats to decide which players to keep for each game do not capture when a player misses a game due to injury or suspension, while someone betting on the game (as well as Las Vegas when making the closing odds) has this information. A serious basketball fan could predict at the beginning of a game with good accuracy which 8 players on a team would play the highest minutes.
+For each game and each team, only the top 9 players in order of minutes played were kept. This way only the more relevant players statistics are considered. One may disagree with the convention to apriori keep players based on their minutes played in the game one wants to predict. The reason for this convention is to attempt to recreate the information one has at the beginning of the game about the players that will play in the game. Using cumulative statistics to decide which players to keep for each game does not capture when a player misses a game due to injury or suspension. On the other hand, someone betting on the game, as well as Las Vegas when making the closing odds, has this information. A serious basketball fan could predict with good accuracy which 9 players on a team would play the highest minutes.
 
-The script *pre_processing.py* does all to the *full_stats_running.csv* dataset, and then creates input and output dataframes to input into the machine learning models. It creates one input dataframe for player statistics, one for team statistics, and one for player and team statistics. The output dataframe is the column of *full_stats_running.csv* that says whether or not the home team won the game. This script also does the training, validation, and test splitting of the data, which is discussed in the following section.
+The script *pre_processing.py* does all of the above to *full_stats_running.csv*, and then creates input and output dataframes for the machine learning models. The script creates one dataframe for player statistics, one for team statistics, and one for player and team statistics. The output dataframe is the column of *full_stats_running.csv* that says whether or not the home team won the game. The script also does the training, validation, and test data splitting, which is discussed in the following section.
 
-The support vector machine and multi-layer perceptron models have the extra pre-processing step of the scaling the features to make them uniform. The data was scaled using ``StandardScaler`` from ``sklearn.preprocessing`` to make the columns have mean 0 and variance 1.
+Finally, the support vector machine and multi-layer perceptron models have the extra pre-processing step of the scaling the features to make them uniform. The data was scaled using ``StandardScaler`` from ``sklearn.preprocessing`` to make the columns have mean 0 and variance 1.
 
 # Training and Validation
 
-The naive models were run on all the games since there is no training and validation for these models.
+The naive models, described in the following section, were run on all games since there is no training and validation for these models.
 
 For the machine learning models, the 2018-19 and 2019-20 seasons were held out as a test set, and the 2007-08 through 2017-18 seasons were split 80%, 20% for training and validation respectively. In the training, validation, and test data there are 9,113 games, 2,279 games, and 1,790 games respectively.
 
-For each of the machine learning models, the model hyperparameters were tuned using the training and and validation data to avoid overfitting and underfitting. Each model has it's own script that does this, with obvious naming conventions. The script *test.py* runs all the models with the determined hyperparameters on the training, validation, and test data. For each of these models we record the percent correct on the training, validation, and test data.
+For each of the machine learning models, the model hyperparameters were tuned using the training and and validation data to prevent overfitting and underfitting. Each model has it's own script that does this, with obvious naming conventions. The script *test.py* runs the models with the determined hyperparameters on the training, validation, and test data. For each of these models we record the percent correct on the training, validation, and test data.
 
 # Naive Models
 
@@ -212,19 +212,19 @@ The model was made and ran using ``keras`` with the ``tensorflow`` backend.
 |Team       | 66.68% | 66.74% | 65.70% |
 |Player and Team | 69.78% | 67.13% | 67.04% |
 
-## Conclusions
+## Conclusions and Future Work
 
-All the models except the player MLP and team MLP models beat the best naive model. The player and the player and team logistic regression and support vector machine models beat the betting odds predictions on the test data, but the logistic regression and support vector machine numbers are a bit odd since the percentages on the test data are higher than the percentages on training and validation data. This is perhaps due to randomness, and the fact that the test data is relatively small. Another possible explanation is that the models are better at predicting some seasons over other seasons. A more season by season analysis is something to explore in the future, and could help explain this phenomenon.
+All the models except the player MLP and team MLP models beat the best naive model. The player and the player and team logistic regression and support vector machine models beat the betting odds predictions on the test data, but the logistic regression and support vector machine numbers are a bit odd since the percentages on the test data are higher than the percentages on training and validation data. This is perhaps due to randomness, and the fact that the test data is relatively small. Another possible explanation is that the models are better at predicting some seasons over other seasons. A more season by season analysis is something I would like to explore in the future. It could explain why these models are doing so well on the test data.
 
 In general, the models all performed better when using the player and the player and team statistics over using just the team statistics. This is not surprising because the player statistics are more detailed and numerous.
 
-It is interesting that all of the models performed similarly on the training and validation data; none of them beating the betting odds predictions. The fact that all the models perform similarly suggests they are all finding similar patterns in the data, with logistic regression and the support vector machine perhaps doing a slightly better job.
+It is interesting that all the models performed similarly on the training and validation data with none of them beating the betting odds predictions. The fact that all the models perform similarly suggests they are all finding similar patterns in the data, with logistic regression and the support vector machine perhaps doing a slightly better job.
 
-The numbers on the predictions here are consistent with the survey of related work on the subject in section 2 of [[HSZ]](#HSZ) as well as being consistent with the predictions made in [[HSZ]](#HSZ).
+The numbers here are consistent with the survey of related work on the subject in section 2 of [[HSZ]](#HSZ), as well as being consistent with the predictions made in [[HSZ]](#HSZ).
 
-## Future Work
+The reason I held out the 2018-19 and 2019-20 seasons as the test set is to create the following betting scenario: one creates a model using all past data available, and then applies the model to the current season (or most recent two seasons in this case). An alternative method to try in the future is the following: create the same models using the same training and validation data here, and then update these models (by retraining them) once every week during the test data seasons with the data from the week added to the training and validation sets. This recreates what one might actually do in a betting scenario. Another alternative method would be to use smaller training and validation sets, perhaps use only from the season or two before the test data season. It is possible that changing trends in NBA game play over the 10 season period of the training and validation data makes the data less susceptible to predictive modeling. Making the training data only from the season or two before the test data removes this issue. On the other hand, a smaller training and validation set brings its own difficulties in making a good predictive model.
 
-There are many directions for future work with the project. One direction  is to do a finer analysis of the logistic regression and multi-layer perceptron models' predictions by considering the probabilities they output versus just rounding the probabilites to predict whether or not the home team will win. A way to do this would be to compare the probabilities the models output with the probabilities from the betting odds in order to devise a betting strategy. This is done in [[HSZ]](#HSZ), and I plan to explore betting possibilities in my next post.
+At the outset of the project, I hoped to build a multilayer perceptron (MLP) model that would beat or at least be as good as the predictions made by the betting odds data. This clearly did not happen. It turned out that the simpler logistic regression and the linear support vector machine models beat the MLP model. In the future I hope to make a more robust MLP model by introducing more advanced statistics into the data. Another possible way to improve the MLP model is to incorporate a convolutional layer. There are many possible ways to do this, and one method is carried out in [[HSZ]](#HSZ). It would be interesting to come up with a new successful way to incorporate a convolutional layer.
 
 # Reference
 
