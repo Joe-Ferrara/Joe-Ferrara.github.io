@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Predicting NBA Games
+title:  Predicting NBA Games with Machine Learning
 comment_issue_id: 10
 ---
 
