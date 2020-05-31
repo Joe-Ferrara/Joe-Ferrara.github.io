@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Using Machine Learning Models to Make Bets
-comment_issue_id: 12
+comment_issue_id: 13
 ---
 
 In this post I simulate various betting strategies using the logistic regression and multi-layer perceptron models from my previous post, [*Predicting NBA Games with Machine Learning*](https://joe-ferrara.github.io/2020/05/04/basketball.html).
