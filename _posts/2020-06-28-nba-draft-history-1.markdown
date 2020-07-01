@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "NBA Draft History: Aggregate Stat"
+title:  "NBA Draft History: The Aggregate Statistic"
 comment_issue_id: ??
 ---
 
