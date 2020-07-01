@@ -21,13 +21,13 @@ The goal of the aggregate statistic is to give one number for each player that r
 
 To make the aggregate statistic, I focused on the Longevity and Advanced statistics. While the Standard statistics are useful, they focuses too much on offensive production, and the important aspects of the Standard statistics are accounted for in the Advanced statistics. The Advanced statistics are useful because they each measure something slightly different in an attempt to give a number that represents the value of a player over his career. The all time leaders for each Advanced statistic are found on basketball-reference.com at the following links: [win shares](https://www.basketball-reference.com/leaders/ws_career.html), [win shares per 48 minutes](https://www.basketball-reference.com/leaders/ws_per_48_career.html), [box score plus minus](https://www.basketball-reference.com/leaders/bpm_career.html), and [value above replacement player](https://www.basketball-reference.com/leaders/vorp_career.html).
 
-The philosophy of my approach to make the aggregate statistic is wisdom of the crowd. I wanted to combine in a sensible way all of the Advanced and Longevity statistics to produce one number between 0 and 10 that evaluates a player's career. I did this in three steps. First, I created an **Agg1** statistic. Second, I created an **Agg2** statistic. **Agg1** and **Agg2** are each slightly different aggregates of the Advanced and Longevity statistics. Third, I created the final aggregate statistic, called **Agg**, which is the average of **Agg1** and **Agg2**.
+The philosophy of my approach to make the aggregate statistic is wisdom of the crowd. I wanted to combine in a sensible way all of the Advanced and Longevity statistics to produce one number between 0 and 10 that evaluates a player's career. I did this in three steps. First, I created an Agg1 statistic. Second, I created an Agg2 statistic. Agg1 and Agg2 are each slightly different aggregates of the Advanced and Longevity statistics. Third, I created the final aggregate statistic, called Agg, which is the average of Agg1 and Agg2.
 
-The players used to to create **Agg** are the players drafted during the years 1969 - 2013 in the top 60 picks who appeared in 100 or more NBA games. The year 1969 was chosen because it is after territorial picks were eliminated from the NBA draft and is the year Kareem Abdul-Jabbar was drafted. I stopped at the year 2013 because for more recent drafts it is difficult to evaluate a player's career since it is ongoing. By including drafts up to 2013, an **Agg** statistic is still established for a number of active players like Stephen Curry and Giannis Antetokounmpo, as their careers are more established than those of players drafted more recently. Only the top 60 picks were used because in the modern NBA draft there are only 60 picks. The 100 games restriction makes it so that only players that appeared in at least a full season of NBA games are considered. A large portion of NBA draft picks do not appear in many games, and the Advanced statistics can be thrown off for players who appear in very few games. The players drafted in the top 60 that appear in less than 100 games are put back into the data and assigned a low **Agg** score when doing the draft analysis in my following posts.
+The players used to to create Agg are the players drafted during the years 1969 - 2013 in the top 60 picks who appeared in 100 or more NBA games. The year 1969 was chosen because it is after territorial picks were eliminated from the NBA draft and is the year Kareem Abdul-Jabbar was drafted. I stopped at the year 2013 because for more recent drafts it is difficult to evaluate a player's career since it is ongoing. By including drafts up to 2013, an Agg statistic is still established for a number of active players like Stephen Curry and Giannis Antetokounmpo, as their careers are more established than those of players drafted more recently. Only the top 60 picks were used because in the modern NBA draft there are only 60 picks. The 100 games restriction makes it so that only players that appeared in at least a full season of NBA games are considered. A large portion of NBA draft picks do not appear in many games, and the Advanced statistics can be thrown off for players who appear in very few games. The players drafted in the top 60 that appear in less than 100 games are put back into the data and assigned a low Agg score when doing the draft analysis in my following posts.
 
 #### Aggregate Statistic 1
 
-Using the wisdom of the crowd philosophy to get the good qualities from the statistics without relying too much on any individual statistic, **Agg1** consists of an average of the Longevity and Advanced statistics. Since each of the statistics has a different range of values, taking a direct average is not ideal because the statistics with a higher range of values will have a greater impact on the final number than the statistics with a smaller range of values. Therefore, all the statistics were min/max normalized over all the players so that each falls in the range 0 to 1.
+Using the wisdom of the crowd philosophy to get the good qualities from the statistics without relying too much on any individual statistic, Agg1 consists of an average of the Longevity and Advanced statistics. Since each of the statistics has a different range of values, taking a direct average is not ideal because the statistics with a higher range of values will have a greater impact on the final number than the statistics with a smaller range of values. Therefore, all the statistics were min/max normalized over all the players so that each falls in the range 0 to 1.
 
 After normalizing, for the Advanced statistics an average was taken.
 
@@ -35,11 +35,11 @@ To incorporate the Longevity statistics I did something slightly different. The 
 
 Finally, for aesthetic reasons, I made the aggregate statistic fall between 0 and 10.
 
-Given an Advanced or Longevity statistic, WS, WS/48, BPM, VORP, Y, G, M, G/Y, the normalized statistic is denoted with a subscript n (so WS<sub>n</sub>, WS/48<sub>n</sub>, BPM<sub>n</sub>, etc). Then **Agg1** is determined by the following formula:
+Given an Advanced or Longevity statistic, WS, WS/48, BPM, VORP, Y, G, M, G/Y, the normalized statistic is denoted with a subscript n (so WS<sub>n</sub>, WS/48<sub>n</sub>, BPM<sub>n</sub>, etc). Then Agg1 is determined by the following formula:
 
-**Agg1** = (1/4)\*(Y<sub>n</sub> + G<sub>n</sub> + M<sub>n</sub> + G/Y<sub>n</sub>) + (9/4)\*(WS<sub>n</sub> + WS/48<sub>n</sub> + BPM<sub>n</sub> + VORP<sub>n</sub>).
+Agg1 = (1/4)\*(Y<sub>n</sub> + G<sub>n</sub> + M<sub>n</sub> + G/Y<sub>n</sub>) + (9/4)\*(WS<sub>n</sub> + WS/48<sub>n</sub> + BPM<sub>n</sub> + VORP<sub>n</sub>).
 
-To evaluate **Agg1**, I used it to produce a list of the top 20 players drafted between 1969 and 2013:
+To evaluate Agg1, I used it to produce a list of the top 20 players drafted between 1969 and 2013:
 
 | Rank  | Player                |Agg1 |
 |-------|-----------------------|------|
@@ -70,11 +70,11 @@ One drawback I should mention of any list I create is that it will only account 
 
 #### Aggregate Stat 2
 
-For **Agg2**, I tried to address the Larry Bird and Magic Johnson problem of **Agg1** - they should be higher on the list and the list should have more players from the 1970s and 1980s. To create **Agg2**, I took a similar approach to **Agg1** in terms of statistics used and each statistic's contribution to the final score, but I changed how the statistics were normalized. To make a player's score more reflective of how good or bad that player was in his era, instead of normalizing each statistic across all drafts from 1969 - 2013, I normalized each statistic across the five drafts closest to the draft in question. That is, if a player was drafted in 2003, then his statistics were min/max normalized within the pool of players drafted in 2001, 2002, 2003, 2004, and 2005 for **Agg2**. I will denote a statistic normalized this way with a subscript n, 5. **Agg2** is then determined by the formula
+For Agg2, I tried to address the Larry Bird and Magic Johnson problem of Agg1 - they should be higher on the list and the list should have more players from the 1970s and 1980s. To create Agg2, I took a similar approach to Agg1 in terms of statistics used and each statistic's contribution to the final score, but I changed how the statistics were normalized. To make a player's score more reflective of how good or bad that player was in his era, instead of normalizing each statistic across all drafts from 1969 - 2013, I normalized each statistic across the five drafts closest to the draft in question. That is, if a player was drafted in 2003, then his statistics were min/max normalized within the pool of players drafted in 2001, 2002, 2003, 2004, and 2005 for Agg2. I will denote a statistic normalized this way with a subscript n, 5. Agg2 is then determined by the formula
 
-**Agg2** = (1/4)\*(Y<sub>n,5</sub> + G<sub>n,5</sub> + M<sub>n,5</sub> + G/Y<sub>n,5</sub>) + (9/4)\*(WS<sub>n,5</sub> + WS/48<sub>n,5</sub> + BPM<sub>n,5</sub> + VORP<sub>n,5</sub>).
+Agg2 = (1/4)\*(Y<sub>n,5</sub> + G<sub>n,5</sub> + M<sub>n,5</sub> + G/Y<sub>n,5</sub>) + (9/4)\*(WS<sub>n,5</sub> + WS/48<sub>n,5</sub> + BPM<sub>n,5</sub> + VORP<sub>n,5</sub>).
 
-The list of top 20 players determine by **Agg2** follows:
+The list of top 20 players determine by Agg2 follows:
 
 |Rank | Player                |Agg2  |
 |-----|-----------------------|------|
@@ -103,11 +103,11 @@ This list again is pretty successful, but also has some drawbacks. Magic Johnson
 
 #### Aggregate Statistic
 
-To make my final statistic, I min/max normalized **Agg1** and **Agg2** to be more similarly distributed in the range 0 to 10 (**Agg2** doesn't have as many scores close to 10 as **Agg1** does), and then took the average. If the normalized **Agg1** and **Agg2** are denoted **Agg1<sub>n</sub>** and **Agg2<sub>n</sub>**, then the final aggregate statistic, **Agg**, is given by by the following formula
+To make my final statistic, I min/max normalized Agg1 and Agg2 to be more similarly distributed in the range 0 to 10 (Agg2 doesn't have as many scores close to 10 as Agg1 does), and then took the average. If the normalized Agg1 and Agg2 are denoted Agg1<sub>n</sub> and Agg2<sub>n</sub>, then the final aggregate statistic, Agg, is given by by the following formula
 
-**Agg** = (**Agg1<sub>n</sub>** + **Agg2<sub>n</sub>**)/2.
+Agg = (Agg1<sub>n</sub> + Agg2<sub>n</sub>)/2.
 
-The list of top 20 players according to **Agg** follows:
+The list of top 20 players according to Agg follows:
 
 |Rank | Player               |Agg|
 |-----|----------------------|--------|
@@ -132,17 +132,17 @@ The list of top 20 players according to **Agg** follows:
 | 19. | Anthony Davis          | 7.83 |
 | 20. | Stephen Curry          | 7.39 |
 
-While this list has its pros and cons as well, I think it is better than the ones produced by **Agg1** and **Agg2**. It has the correct top 3 players, and Tim Duncan is arguably the fourth best player since 1969. Some players are perhaps too high because of their lack of playoff success that **Agg** cannot account for. Overall, I like this group of 20. For the utility of **Agg**, it is more important that the group of 20 is solid without outliers than having the exact order perfect since this statistic will be used to evaluate all players.
+While this list has its pros and cons as well, I think it is better than the ones produced by Agg1 and Agg2. It has the correct top 3 players, and Tim Duncan is arguably the fourth best player since 1969. Some players are perhaps too high because of their lack of playoff success that Agg cannot account for. Overall, I like this group of 20. For the utility of Agg, it is more important that the group of 20 is solid without outliers than having the exact order perfect since this statistic will be used to evaluate all players.
 
-Here is some more information about **Agg**. There were 1,526 players drafted between 1969 and 2013 that played (or have played) in 100 or more games. The mean of **Agg** is 3.00 and the standard deviation is 1.41. The top 99 percentile of players have an **Agg** score of 7.95 or above and the bottom 1 percentile of players have an **Agg** score of 0.72 or below. A histogram of the **Agg** scores follows:
+Here is some more information about Agg. There were 1,526 players drafted between 1969 and 2013 that played (or have played) in 100 or more games. The mean of Agg is 3.00 and the standard deviation is 1.41. The top 99 percentile of players have an Agg score of 7.95 or above and the bottom 1 percentile of players have an Agg score of 0.72 or below. A histogram of the Agg scores follows:
 
 ![image](/pictures/agg_stat.png "Histogram of the Agg Stat")
 
-To do the draft analysis in my next two posts, players drafted between 1969 and 2013 that played less than 100 career games are put back into the dataset with an **Agg** score of 1.0. This puts them in the bottom 3 percentile of players, making them recorded as an unsuccessful draft pick.
+To do the draft analysis in my next two posts, players drafted between 1969 and 2013 that played less than 100 career games are put back into the dataset with an Agg score of 1.0. This puts them in the bottom 3 percentile of players, making them recorded as an unsuccessful draft pick.
 
 #### ESPN's Top 20
 
-Recently, ESPN created a list of the top 74 players in NBA history, which can be found [here (top 10)](https://www.espn.com/nba/story/_/id/29105801/ranking-top-74-nba-players-all-nos-10-1), [here (11-40)](https://www.espn.com/nba/story/_/id/29105681/ranking-top-74-nba-players-all-nos-40-11), and [here (41-74)](https://www.espn.com/nba/story/_/id/29105574/nbarank-players-top-74-74-41). To compare with **Agg**'s top 20, I listed below the 20 players drafted between 1969 and 2013 according to ESPN. ESPN's actual list considers all NBA seasons, so there is some discrepancy between ESPN's list and what appears here because I have taken out players drafted before 1969 (and Moses Malone who came over from the ABA). In parenthesis on the following list is the ranking of each player given by **Agg**.
+Recently, ESPN created a list of the top 74 players in NBA history, which can be found [here (top 10)](https://www.espn.com/nba/story/_/id/29105801/ranking-top-74-nba-players-all-nos-10-1), [here (11-40)](https://www.espn.com/nba/story/_/id/29105681/ranking-top-74-nba-players-all-nos-40-11), and [here (41-74)](https://www.espn.com/nba/story/_/id/29105574/nbarank-players-top-74-74-41). To compare with Agg's top 20, I listed below the 20 players drafted between 1969 and 2013 according to ESPN. ESPN's actual list considers all NBA seasons, so there is some discrepancy between ESPN's list and what appears here because I have taken out players drafted before 1969 (and Moses Malone who came over from the ABA). In parenthesis on the following list is the ranking of each player given by Agg.
 
 | Rank | Player (Rank from Agg Stat) |
 |------|-----------------------------|
@@ -167,4 +167,4 @@ Recently, ESPN created a list of the top 74 players in NBA history, which can be
 |  19. | Kawhi Leonard (32) |
 |  20. | Dwayne Wade (42) |
 
-ESPN's top 20 and **Agg**'s top 20 have 16 players in common. **Agg1** and **Agg2**'s top 20 each have 15 players in common with ESPN's list.
+ESPN's top 20 and Agg's top 20 have 16 players in common. Agg1 and Agg2's top 20 each have 15 players in common with ESPN's list.
