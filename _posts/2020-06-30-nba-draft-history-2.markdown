@@ -66,9 +66,33 @@ To determine the best and worst teams at drafting over any five year period, I u
 
 I used the same method to determine the worst teams at drafting over any five year period. For the worst teams, I restricted the data to five year periods since 1990, when the weighted NBA lottery system began. When running the calculations on all the years since 1969, most of the worst teams were from the 70s when there were less teams in the league. With less teams in the league, each team had more picks in the top 60 picks. This led to lower scores because each team had more unsuccessful picks, which also explains the lack of any team from the 70s in the top 10 for best teams at drafting.
 
-## 10 Best Team Periods At Drafting
+#### 10 Best Team Draft Periods
+  1. [Utah Jazz 1982 - 1986, Score 15.16](#Utah Jazz 1982 - 1986, Score 15.16)
+  2. [Los Angeles Lakers 1992 - 1996, Score 15.01](#Los Angeles Lakers 1992 - 1996, Score 15.01)
+  3. [Portland Trail Blazers 1982 - 1986, Score 11.93](#Portland Trail Blazers 1982 - 1986, Score 11.93)
+  4. [Oklahoma City Thunder 2007 - 2011, Score 11.81](#Oklahoma City Thunder 2007 - 2011, Score 11.81)
+  5. [San Antonio Spurs 1997 - 2001, Score 11.65](#San Antonio Spurs 1997 - 2001, Score 11.65)
+  6. [Seattle SuperSonics 1986 - 1990, Score 10.59](#Seattle SuperSonics 1986 - 1990, Score 10.59)
+  7. [San Antonio Spurs 2007 - 2011, Score 10.55](#San Antonio Spurs 2007 - 2011, Score 10.55)
+  8. [Houston Rockets 2007 - 2011, Score 9.48](#Houston Rockets 2007 - 2011, Score 9.48)
+  9. [Memphis Grizzlies 2005 - 2009, Score 9.00](#Memphis Grizzlies 2005 - 2009, Score 9.00)
+  10. [Chicago Bulls 2007 - 2011, Score 8.62](#Chicago Bulls 2007 - 2011, Score 8.62)
 
-### Utah Jazz 1982 - 1986, Score 15.16
+#### 10 Worst Team Draft Periods
+  1. [Toronto Raptors 2004 -  2008, Score -8.16](#Toronto Raptors 2004 -  2008, Score -8.16)
+  2. [Los Angeles Clippers 2003 - 2007, Score -7.83](#Los Angeles Clippers 2003 - 2007, Score -7.83)
+  3. [New York Knicks 1999 - 2003, Score -7.40](#New York Knicks 1999 - 2003, Score -7.40)
+  4. [Phoenix Suns 2009 - 2013, Score -6.06](#Phoenix Suns 2009 - 2013, Score -6.06)
+  5. [Los Angeles Clippers 1996 - 2000, Score -5.39](#Los Angeles Clippers 1996 - 2000, Score -5.39)
+  6. [Denver Nuggets 2001 - 2005, Score -5.37](#Denver Nuggets 2001 - 2005, Score -5.37)
+  7. [Minnesota Timberwolves 2009 - 2013, Score -5.32](#Minnesota Timberwolves 2009 - 2013, Score -5.32)
+  8. [Chicago Bulls 2000 - 2004, Score -5.31](#Chicago Bulls 2000 - 2004, Score -5.31)
+  9. [Los Angeles Clippers 1990 - 1994, Score -5.30](#Los Angeles Clippers 1990 - 1994, Score -5.30)
+  10. [Portland Trail Blazers 2000 - 2004, Score -5.29](#Portland Trail Blazers 2000 - 2004, Score -5.29)
+
+## 10 Best Team Draft Periods
+
+### <a name="Utah Jazz 1982 - 1986, Score 15.16">Utah Jazz 1982 - 1986, Score 15.16</a>
 
 | Picks (year, pick)              | AOA |
 |---------------------------------|------------|
@@ -90,7 +114,7 @@ Overlapping notable periods:
 * 1981 - 1985, score 13.51
 * 1984 - 1988, score 12.44
 
-###  Los Angeles Lakers 1992 - 1996, Score 15.01
+### <a name="Los Angeles Lakers 1992 - 1996, Score 15.01">Los Angeles Lakers 1992 - 1996, Score 15.01</a>
 
 | Picks (year, pick)              | AOA        |
 |---------------------------------|------------|
@@ -115,7 +139,7 @@ Overlapping notable periods:
 * 1989 - 1993, score 11.53
   * It is worth noting that Kobe, Eddie Jones, and Derek Fisher were not picked during the 1989 - 1993 period. This period included the notable draft picks Vlade Divac (AOA 3.46) and Elden Campbell (AOA 2.19), who were on the 1991 team that lost in the NBA Finals.
 
-### Portland Trail Blazers 1982 - 1986, Score 11.93
+### <a name="Portland Trail Blazers 1982 - 1986, Score 11.93">Portland Trail Blazers 1982 - 1986, Score 11.93</a>
 
 | Picks (year, pick)              |  AOA  |
 |---------------------------------|-------|
@@ -141,7 +165,7 @@ Overlapping notable periods:
 
 Tacking place before the modern lottery era, Portland had a lot of picks during this time period. These drafts laid the foundation for an extremely successful Portland run, though they never won a championship. They made it to the NBA Finals in 1990 and 1992. It is amazing to get a score this high, while including the Sam Bowie pick, which was a notoriously bad pick taking him before Michael Jordan in the 1984 draft.
 
-### Oklahoma City Thunder late 2007 - 2011, Score 11.81
+### <a name="Oklahoma City Thunder 2007 - 2011, Score 11.81">Oklahoma City Thunder 2007 - 2011, Score 11.81</a>
 
 | Picks (year, pick)            | AOA   |
 |---------------------------------|-------|
@@ -168,7 +192,7 @@ Overlapping notable periods:
   * This time period does not include Kevin Durant or Russell Westbrook. Sam Presti continued drafting valuable players taking Jeremy Lamb (AOA 1.04), Andre Roberson (AOA 0.87), and Alex Abrines (AOA 0.73) that do not appear on the above list.
 * 2008 - 2012, score 9.13
 
-### San Antonio Spurs late 1997 - 2001, Score 11.65
+### <a name="San Antonio Spurs 1997 - 2001, Score 11.65">San Antonio Spurs 1997 - 2001, Score 11.65</a>
 
 | Picks (year, pick)            | AOA   |
 |---------------------------------|-------|
@@ -191,7 +215,7 @@ Overlapping notable periods:
 * 1996, score 9.04
 * 1995, score 8.27
 
-### Seattle SuperSonics 1986 - 1990, Score 10.59
+### <a name="Seattle SuperSonics 1986 - 1990, Score 10.59">Seattle SuperSonics 1986 - 1990, Score 10.59</a>
 
 | Players (year, pick)            | AOA   |
 |---------------------------------|-------|
@@ -210,7 +234,7 @@ Overlapping notable periods:
 
 Drafts that would lead to the last great time period for the Seattle SuperSonics before they left Seattle to become the Oklahoma City Thunder. Gary Payton and Shawn Kemp became superstars, and Nate McMillan became known as "Mr. Sonic", the trio led the Sonics to the NBA Finals in 1996.
 
-### San Antonio Spurs 2007 - 2011, Score 10.55
+### <a name="San Antonio Spurs 2007 - 2011, Score 10.55">San Antonio Spurs 2007 - 2011, Score 10.55</a>
 
 | Picks (year, pick)              |  AOA  |
 |---------------------------------|-------|
@@ -238,7 +262,7 @@ These drafts allowed the Spurs to continue their success as Duncan, Ginóbili, a
 Overlapping notable periods:
 * 2008, score 10.11
 
-### Houston Rockets 2007 - 2011, Score 9.48
+### <a name="Houston Rockets 2007 - 2011, Score 9.48">Houston Rockets 2007 - 2011, Score 9.48</a>
 
 | Players (year, pick)            | AOA |
 |---------------------------------|-------|
@@ -263,7 +287,7 @@ Daryl Morey took over as general manager for the Rockets in 2007, and is now kno
 Overlapping notable periods:
 * 2006 - 2010, score 8.43
 
-### Memphis Grizzlies 2005 - 2009, Score 9.00
+### <a name="Memphis Grizzlies 2005 - 2009, Score 9.00">Memphis Grizzlies 2005 - 2009, Score 9.00</a>
 
 | Picks (year, pick)             |  AOA |
 |--------------------------------|-------|
@@ -284,7 +308,7 @@ Overlapping notable periods:
 
 Jerry West makes another appearance, though he cannot take credit for all of these picks. The top player on this list, Marc Gasol was a throw in from the Lakers in the Pau Gasol trade. This era also has Hasheem Thabeet, a notoriously bad pick, and O.J. Mayo who was not a very good pick either. The Grizzlies teams these picks led to had some success but never made it farther than the Western Conference Finals. They had a cult following though, and the period of success was known as the Grit and Grind Era.
 
-### Chicago Bulls 2007 - 2011, Score 8.62
+### <a name="Chicago Bulls 2007 - 2011, Score 8.62">Chicago Bulls 2007 - 2011, Score 8.62</a>
 
 | Picks (year, pick)              | AOA |
 |---------------------------------|-------|
@@ -301,9 +325,9 @@ Jerry West makes another appearance, though he cannot take credit for all of the
 
 Considering that Derrick Rose was a much better pick than AOA is reflecting here, this was a great string of picks by the Bulls. These Bulls are a story of what could have been, having injuries to Derrick Rose preventing them from potentially making it to the Finals and/or winning a championship.
 
-## 10 Worst Team Periods at Drafting
+## 10 Worst Team Draft Periods
 
-### Toronto Raptors 2004 -  2008, Score -8.16
+### <a name="Toronto Raptors 2004 -  2008, Score -8.16">Toronto Raptors 2004 -  2008, Score -8.16</a>
 
 | Picks (year, pick)              | AOA |
 |---------------------------------|------------|
@@ -323,7 +347,7 @@ Bizarrely having four general managers during this time period (according to bas
 Overlapping notable periods:
 * 2002 - 2006, score -5.90
 
-### Los Angeles Clippers 2003 - 2007, Score -7.83
+### <a name="Los Angeles Clippers 2003 - 2007, Score -7.83">Los Angeles Clippers 2003 - 2007, Score -7.83</a>
 
 | Picks (year, pick)               | AOA |
 |----------------------------------|------------|
@@ -342,9 +366,9 @@ Overlapping notable periods:
 
 **General Manager**: Elgin Baylor (1986 - 2008)
 
-The Clippers whom were almost always terrible, amazingly make it on this list three times. That means they have 3 non-overlapping five year periods of terrible draft picks. Elgin Baylor was the general manager for all three of these periods. At the end of Elgin Baylor's time as general manager, this was the worst period.
+The Clippers whom were almost always terrible during 1990 - 2013, amazingly make it on this list three times. That means they have 3 non-overlapping five year periods of terrible draft picks. Elgin Baylor was the general manager for all three of these periods. At the end of Elgin Baylor's time as general manager, this was the worst period.
 
-### New York Knicks 1999 - 2003, Score -7.40
+### <a name="New York Knicks 1999 - 2003, Score -7.40">New York Knicks 1999 - 2003, Score -7.40</a>
 
 | Picks (year, pick)              | AOA |
 |---------------------------------|------------|
@@ -365,7 +389,7 @@ The Knicks made the Finals in 1999, and have been mostly bad since. Hitting on a
 Overlapping notable periods:
 * 1998 - 2002, score -6.26
 
-### Phoenix Suns 2009 - 2013, Score -6.06
+### <a name="Phoenix Suns 2009 - 2013, Score -6.06">Phoenix Suns 2009 - 2013, Score -6.06</a>
 
 | Picks (year, pick)            | AOA |
 |---------------------------------|------------|
@@ -384,7 +408,7 @@ Overlapping notable periods:
 
 No notoriously bad picks here, just a string of players that were not good in the NBA and a lot of general managers. These years overlapped with the tail end of the Steve Nash era in Phoenix, and led to a long time of mediocrity and general blandness for the Suns.
 
-### Los Angeles Clippers 1996 - 2000, Score -5.39
+### <a name="Los Angeles Clippers 1996 - 2000, Score -5.39">Los Angeles Clippers 1996 - 2000, Score -5.39</a>
 
 | Picks (year, pick)            | AOA |
 |---------------------------------|------------|
@@ -407,7 +431,7 @@ No notoriously bad picks here, just a string of players that were not good in th
 
 Second time that Elgin Baylor's clippers are appearing. Michael Olowokandi was a notoriously bad pick at the time that is still talked about today. Bunch of other bad picks on here, but also some decent picks as well. Lamar Odom and Quentin Richardson went on to have good NBA careers.
 
-### Denver Nuggets 2001 - 2005, Score -5.37
+### <a name="Denver Nuggets 2001 - 2005, Score -5.37">Denver Nuggets 2001 - 2005, Score -5.37</a>
 
 | Picks (year, pick)            | AOA |
 |---------------------------------|------------|
@@ -427,7 +451,7 @@ Second time that Elgin Baylor's clippers are appearing. Michael Olowokandi was a
 
 Nikoloz Tskitishvili is the first cautionary tale of taking a European prospect based on workout tapes, and not much legitimate game footage. He was a historically bad pick. This list has Carmelo Anthony at 0.96 AOA, showing that Agg perhaps does not value him enough. Advanced statistics have never been kind to Carmelo Anthony.
 
-### Minnesota Timberwolves 2009 - 2013, Score -5.32
+### <a name="Minnesota Timberwolves 2009 - 2013, Score -5.32">Minnesota Timberwolves 2009 - 2013, Score -5.32</a>
 
 | Picks (year, pick)            | AOA |
 |---------------------------------|------------|
@@ -449,9 +473,9 @@ Nikoloz Tskitishvili is the first cautionary tale of taking a European prospect 
 
 **General Managers** David Kahn (2009 - 2013) and Flip Saunders (2013 - 2015)
 
-The infamous Kahn era in Minnesota. Three bad picks enar the top of the draft in Jonny Flynn, Wesley Johnson, and Derrick Williams. He also took Jonny Flynn and Ricky Rubio, two point gaurds, ahead of Steph Curry in 2009. Flip Saunders took over in 2013 and made some of the better picks at the bottom of this list, showing just how bad Kahn's era was.
+The infamous Kahn era in Minnesota. Three bad picks near the top of the draft in Jonny Flynn, Wesley Johnson, and Derrick Williams. He also took Jonny Flynn and Ricky Rubio, two point gaurds, ahead of Steph Curry in 2009. Flip Saunders took over in 2013 and made some of the better picks at the bottom of this list, showing just how bad Kahn's era was.
 
-### Chicago Bulls 2000 - 2004, Score -5.31
+### <a name="Chicago Bulls 2000 - 2004, Score -5.31">Chicago Bulls 2000 - 2004, Score -5.31</a>
 
 | Picks (year, pick)            | AOA |
 |---------------------------------|------------|
@@ -477,7 +501,7 @@ The infamous Kahn era in Minnesota. Three bad picks enar the top of the draft in
 
 A lot of bad picks near the top of the draft. Some of this is Jerry Krause's work to try and make a good Bulls team post Michael Jordan leaving (whom Krause did not want to bring back). Jay Williams could have been good before an unfortunate motorcycle accident basically ended his career.
 
-### Los Angeles Clippers 1990 - 1994, Score -5.30
+### <a name="Los Angeles Clippers 1990 - 1994, Score -5.30">Los Angeles Clippers 1990 - 1994, Score -5.30</a>
 
 | Picks (year, pick)            | AOA |
 |---------------------------------|------------|
@@ -499,7 +523,7 @@ A lot of bad picks near the top of the draft. Some of this is Jerry Krause's wor
 
 Another terrible Clippers run, this time from an earlier park of Elgin Baylor's career as their manager.
 
-### Portland Trail Blazers 2000 - 2004, Score -5.29
+### <a name="Portland Trail Blazers 2000 - 2004, Score -5.29">Portland Trail Blazers 2000 - 2004, Score -5.29</a>
 
 | Picks (year, pick)             | AOA |
 |----------------------------------|-------|
