@@ -68,7 +68,7 @@ This list decently parallels what one would imagine are the top players of the g
 
 One drawback I should mention of any list I create is that it will only account for career regular season statistics. The lists cannot take into account the playoffs or how many championships a player won. This causes players like Karl Malone and John Stockton who had very long careers with great statistics to always score very high on my lists, even though they never won a championship. For these reasons the lists I produce will always have some discrepancy with lists created by basketball historians and/or media outlets that value playoff and championship success.
 
-#### Aggregate Stat 2
+#### Aggregate Statistic 2
 
 For Agg2, I tried to address the Larry Bird and Magic Johnson problem of Agg1 - they should be higher on the list and the list should have more players from the 1970s and 1980s. To create Agg2, I took a similar approach to Agg1 in terms of statistics used and each statistic's contribution to the final score, but I changed how the statistics were normalized. To make a player's score more reflective of how good or bad that player was in his era, instead of normalizing each statistic across all drafts from 1969 - 2013, I normalized each statistic across the five drafts closest to the draft in question. That is, if a player was drafted in 2003, then his statistics were min/max normalized within the pool of players drafted in 2001, 2002, 2003, 2004, and 2005 for Agg2. I will denote a statistic normalized this way with a subscript n, 5. Agg2 is then determined by the formula
 
