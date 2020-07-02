@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "NBA Draft History: The Aggregate Statistic"
-comment_issue_id: ??
+comment_issue_id: 15
 ---
 
 <style>

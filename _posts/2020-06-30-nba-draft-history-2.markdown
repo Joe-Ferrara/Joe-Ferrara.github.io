@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "NBA Draft History: The Best and Worst Teams at Drafting"
-comment_issue_id: ??
+comment_issue_id: 16
 ---
 
 <style>
