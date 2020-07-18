@@ -9,11 +9,11 @@ table {width:40%;
 }
 </style>
 
-In this post, I use my [NBA draft history](https://github.com/Joe-Ferrara/nba-draft-history) data to do a historical analysis of the best colleges at producing NBA players. The two criteria I use are total number of players drafted since 1967, and total [Agg](https://joe-ferrara.github.io/2020/06/28/nba-draft-history-1.html) of all players drafted over a 5 year period. The six colleges with the most players drafted since 1967 have their picks per year and total picks since 1967 graphed and analyzed. The top ten total Agg scores for nonoverlapping five year periods are recorded with the players drafted, and commented on.
+In this post, using my [NBA draft history](https://github.com/Joe-Ferrara/nba-draft-history) data I do a historical analysis of the best colleges at producing NBA players. The two criteria considered are total number of players drafted, and total [Agg](https://joe-ferrara.github.io/2020/06/28/nba-draft-history-1.html) of all players drafted over a given five year period. The six colleges with the most players drafted since 1967 have their number of picks per year and total picks since 1967 graphed and analyzed. The top five year periods of drafts for a given college in terms of total Agg are recorded and commented on.
 
 ## Most Draft Picks
 
-Since 1967, the six colleges with the most NBA draft picks are UCLA, Kentucky, Duke, North Carolina (UNC), Kansas, and Arizona. The following list has these colleges' pick counts. Clicking on the college sends you to a bar graph of number of picks that college had each year since 1967 and some commentary on the best five year periods of picks for that college.
+Since 1967, the six colleges with the most NBA draft picks are UCLA, Kentucky, Duke, North Carolina (UNC), Kansas, and Arizona. These colleges and the number of picks from each college since 1967 are recorded in the following list. Clicking on one of the colleges sends you to a bar graph of number of picks that college had each year since 1967 as well as some commentary on the best five year periods of picks for that college.
 
 **Colleges producing the most draft picks since 1967**:
 * [UCLA](#UCLA): 73
@@ -27,11 +27,11 @@ For each of these colleges, their total picks over time are graphed below:
 
 ![image](/pictures/nba_draft_history_3/total_picks_since_1967.png "Total Picks Since 1967")
 
-As seen in the graph, UCLA dominated during the 70s, 80s, and 90s with North Carolina in second most of the time. Around 2010, Duke and Kentucky had sharp spikes catching up to UCLA and North Carolina by 2019 respectively.
+As seen in the graph, UCLA dominated during the 70s, 80s, and 90s with North Carolina in second most of the time. Around 2010, Duke and Kentucky have sharp spikes in slope, catching up to UCLA and North Carolina respectively by 2019.
 
-To get a better modern picture of these colleges' draft history, I split the time period 1967 - 2019 at the year 1995 and considered drafts before 1995 and from 1995 onward. I chose the year 1995 because that is the year when Kevin Garnett was drafted, the first player drafted out of high school since Moses Malone was drafted to the ABA out of high school in 1974. From 1995 to 2006, many players went strait from high school to the NBA (these players included Kobe Bryant and Lebron James) affecting how draft prospects were considered, and how long college players stayed in school.
+To get a better modern picture of these colleges' draft history, I split the time period 1967 - 2019 at the year 1995 and considered drafts before 1995 and from 1995 onward. I chose the year 1995 because that is the year when Kevin Garnett was drafted, the first player drafted out of high school since Moses Malone in 1974. From 1995 to 2006, many players went strait from high school to the NBA (these players included Kobe Bryant and Lebron James) changing the culture of how draft prospects were considered, and how long college players stayed in school.
 
-The colleges that contributed the most draft picks from 1967 through 1994 are UCLA, North Carolina (UNC), Indiana, Louisville, Michigan, NC State, and Kentucky. Their pick numbers and a graph of their picks over time follows.
+The colleges that contributed the most draft picks from 1967 through 1994 are UCLA, North Carolina (UNC), Indiana, Louisville, Michigan, NC State, and Kentucky. Their pick numbers and a graph of their picks over time follows:
 
 **Colleges producing the most draft picks from 1967 to 1994**:
 * **UCLA**: 36 (National Champs: 1967, 1968, 1969, 1970, 1971, 1972, 1973, 1975)
@@ -44,9 +44,9 @@ The colleges that contributed the most draft picks from 1967 through 1994 are UC
 
 ![image](/pictures/nba_draft_history_3/total_picks_1967_to_1994.png "Total Picks From 1967 to 1994")
 
-During this time period, we see clear dominance by UCLA, which was a historically dominant team winning 8 National Championships. Indiana, Louisville, Michigan, and NC State appear in this list after not appearing in the 1967 - 2019 list, and they all had success during this time period with Indiana winning 3 National Championships, Louisville 2, Michigan 1, and NC State 2.
+During this time period, we see clear dominance by UCLA. UCLA was a historically dominant team, winning 8 National Championships between 1967 and 1994. Indiana, Louisville, Michigan, and NC State appear in this list after not appearing in the 1967 - 2019 list.
 
-The colleges with the most draft picks from 1995 through 2019 are Kentucky, Duke, UCLA, North Carolina (UNC), Kansas, and Arizona. The same colleges in the original list. The number picks for these colleges over this time period follows:
+The colleges with the most draft picks from 1995 through 2019 are Kentucky, Duke, UCLA, North Carolina (UNC), Kansas, and Arizona - the same colleges from the 1967 - 2019 list. The number picks for these colleges over this time period and a graph of their picks over time follows:
 
 **Colleges producing the most draft picks from 1995 to 2019**:
 * **Kentucky**: 51 (National Champs: 1996, 1998, 2012)
@@ -56,17 +56,15 @@ The colleges with the most draft picks from 1995 through 2019 are Kentucky, Duke
 * **Kansas**: 34 (National Champs: 2008)
 * **Arizona**: 32 (National Champs: 1997)
 
-Here is a graph of these colleges' total picks of the time period of 1995 to 2019.
-
 ![image](/pictures/nba_draft_history_3/total_picks_1995_to_2019.png "Total Picks From 1995 to 2019")
 
-High school players were allowed in the draft from 1995 through 2005, with the 2006 draft being the first one where high school players were not allowed to be drafted. On the graph, there is a spike is slope for Kansas in 2008, Kentucky in 2010, and Duke in 2011, as these colleges most aggressively took advantage of high school players not being able to enter the NBA draft after 2005. The post 2005 era in college basketball has become known as the one and done era, as the top college prospects more often than not only stay in college for one year, after which they become eligible to join the NBA.
+High school players were allowed in the draft from 1995 through 2005, with the 2006 draft being the first one where high school players were not allowed to be drafted. On the graph, there is a spike is slope for Kansas in 2008, Kentucky in 2010, and Duke in 2011, as these colleges most aggressively took advantage of high school players not being able to enter the NBA draft after 2005. The post 2005 era in college basketball has become known as the one and done era, as the top college prospects more often than not only stay in college for one year to become eligible to join the NBA.
 
 ## Best Draft Periods
 
 In addition to considering the colleges that produced the most NBA draft picks, I also considered the colleges that produced the best NBA draft picks. To do this, I considered any five year period for any college starting with the period 1967 - 1971, and ending with the period 2009 - 2013, as 2013 is the last year I have Agg scores for draft picks. For each five year period, I added up the Agg scores for all the players drafted from each college.
 
-Below is a list of the top ten five year periods of draft picks for any college, along with the sum of the Agg score of the draft picks over that period. Clicking an item in the list will send you to a table of the players drafted during the period, their respective Agg scores, and some words about the success of the college during the period. The list was created so that multiple overlapping time periods from the same college do not appear. If overlapping time periods for a college would have appeared in this list, then the lower scored time periods were removed and only the highest scored time period appears. The lower scored overlapping time periods are noted below  in the section where the highest scored time period is discussed.
+Below is a list of the top ten five year periods of draft picks for any college, along with the sum of the Agg score of the draft picks over that period. Clicking an item in the list sends you to a table of the players drafted during the period, their respective Agg scores, and some words about the success of the college during the period. The list was created so that multiple overlapping time periods from the same college do not appear. If one of the colleges in the list has an overlapping time period with an Agg score above 26.15, then that time period is noted in the section where the listed time period is discussed.
 
 # 10 Best Draft Periods
   1. [Kentucky 2009 - 2013, Score 49.50](#Kentucky 2009 - 2013, Total Agg 49.50)
@@ -101,7 +99,7 @@ Below is a list of the top ten five year periods of draft picks for any college,
 
 **Coach**: Ben Howland (2003 - 2013)
 
-This was the prime of the Ben Howland era at UCLA. UCLA made it to the Final Four in 2006, 2007, and 2008, losing in the National Championship game in 2006.
+This was the prime of the Ben Howland era at UCLA. UCLA made it to the Final Four in 2006, 2007, and 2008, losing in the National Championship game in 2006. Unfortunately, UCLA never won a National Championship with Ben Howland as coach.
 
 Overlapping notable periods:
 * 2006 - 2010, total Agg 31.16
@@ -125,7 +123,7 @@ Overlapping notable periods:
 
 **Coach**: John Wooden (1948 - 1975)
 
-John Wooden is widely regarded as the best men's college basketball coach in history, and Kareem Abdul-Jabbar, the best men's college basketball player in history. This time period was the the prime of the John Wooden era as UCLA won the National Championship every year during this period.
+John Wooden is widely regarded as the best men's college basketball coach in history, and Kareem Abdul-Jabbar is widely regarded as the best men's college basketball player in history. This time period was the the prime of the John Wooden era as UCLA won the National Championship every year from 1969 to 1973.
 
 Overlapping notable periods:
 * 1971 - 1975, total Agg 28.94
@@ -160,9 +158,9 @@ Overlapping notable periods:
 
 **Coach**: John Calipari (2009 - present)
 
-John Calipari's name at Kentucky is ubiquitous with the one and done era. During recruiting, Calipari promises players that he will do the best job getting them ready for and to the NBA, and he has a track record of success. Calipari's Kentucky teams would have even higher Agg scores if the Agg statistic was calculated for drafts after 2013. During the given time period Kentucky had great success in the NCAA tournament, winning a National Championship in 2012 and making it to the Final Four in 2011.
+John Calipari's name at Kentucky is ubiquitous with the one and done era. During recruiting, Calipari promises recruits that he is the best at getting them ready for and to the NBA; he has a track record of success doing exactly that. Calipari's Kentucky teams would have even higher Agg scores if the Agg statistic was calculated for drafts after 2013. During this time period Kentucky's success in the NCAA tournament was a National Championship in 2012 and making it to the Final Four in 2011.
 
-Overlapping Notable Periods:
+Overlapping notable periods:
 * 2008 - 2012, total Agg 45.21
 * 2007 - 2011, total Agg 27.07
 * 2006 - 2010, total Agg 26.50
@@ -234,7 +232,7 @@ Overlapping notable peridos:
 
 **Coach**: Roy Williams (2003 - present)
 
-Roy Williams wouldn't win his first National Championship until 2016. These teams are good examples of great teams put together by Williams that could not quite win it all. North Carolina made it to the Final Four in 2009 and 2008 (with Danny Green, Ty Lawson, Tyler Hansbrough, and Wayne Ellington from this list on the team), but somehow did not make it to a National Championship game during this time period.
+Roy Williams wouldn't win his first National Championship until 2016. These teams are examples of great teams put together by Williams that could not quite win it all. North Carolina made it to the Final Four in 2009 and 2008 (with Danny Green, Ty Lawson, Tyler Hansbrough, and Wayne Ellington from this list on the team), but somehow did not make it to a National Championship game during this time period.
 
 Overlapping notable periods:
 * 2005 - 2009, total Agg 30.56
