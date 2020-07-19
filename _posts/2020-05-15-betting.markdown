@@ -2,6 +2,7 @@
 layout: post
 title:  How Betting Odds Work
 comment_issue_id: 11
+sub: "betting"
 ---
 
 This is an intermediary post between my [previous post](https://joe-ferrara.github.io/2020/05/04/basketball.html) and next post, to explain how betting odds work. In my last post I used machine learning algorithms to predict the outcomes of NBA games and compared the predictions to Las Vegas betting odds' predictions. In my next post I will use the machine learning models' predictions to simulate making bets on games and see how much money is won or lost.

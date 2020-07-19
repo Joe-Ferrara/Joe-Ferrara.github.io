@@ -1,7 +1,8 @@
 ---
 layout: post
-title:  "Coding Theory: Introduction"
+title:  "Introduction"
 comment_issue_id: 7
+sub: "coding"
 ---
 
 During my postdoc, I've done research involving the mathematical objects called Drinfeld modules ([wiki](https://en.wikipedia.org/wiki/Drinfeld_module), [general reference](http://www-math.mit.edu/~poonen/papers/drinfeld.pdf) explaining their importance in the context of more well known number theory). Upon learning about Drinfeld modules, I learned that they have a theoretical application to the very practical area of math known as coding theory. (Warning: in coding theory the word code does not mean the same thing as in computer science.) Interested in learning practical math that's applied using computer science, I decided to learn exactly how Drinfeld modules are used in coding theory in hopes of programming codes that use Drinfeld modules.

@@ -1,7 +1,8 @@
 ---
 layout: post
-title:  "Introduction to L-functions II: L-series and Class Number Formula"
+title:  "Intro II: L-series and Class Number Formula"
 comment_issue_id: 2
+sub: "lfunctions"
 ---
 
 # $L$-series

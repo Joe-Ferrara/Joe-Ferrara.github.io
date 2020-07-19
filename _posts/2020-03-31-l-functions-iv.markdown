@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "Introduction to L-functions IV: Units and Imaginary Quadratic Class Numbers"
+title: "Intro IV: Units and Imaginary Quadratic Class Numbers"
 comment_issue_id: 4
+sub: "lfunctions"
 ---
 
 Let $K$ be the quadratic field $\mathbb Q(\sqrt{d})$ and let $D$ be $K$'s discriminant. In my previous post I gave a formula for the class number of $K$ in terms of the special value of the $L$-function $L(\chi_D, s)$ at $s = 1$. When $K$ is imaginary quadratic the formula is

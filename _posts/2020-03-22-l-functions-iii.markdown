@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "Introduction to L-functions III: Quadratic Fields"
+title: "Intro III: Quadratic Fields"
 comment_issue_id: 3
+sub: "lfunctions"
 ---
 
 In this post, I will connect the two sections of my previous post, and show how to produce many more special value formulas like the ones for $L(\chi_{-4}, 1)$ and $L(\chi_8, 1)$. Recall that these two special value formulas are

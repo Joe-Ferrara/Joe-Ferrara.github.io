@@ -1,7 +1,8 @@
 ---
 layout: post
-title:  "Coding Theory: Reed-Solomon Codes"
+title:  "Reed-Solomon Codes"
 comment_issue_id: 9
+sub: "coding"
 ---
 
 

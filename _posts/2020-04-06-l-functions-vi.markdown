@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "Introduction to L-functions VI: (p-adic) Stark's Conjectures"
+title: "Intro VI: (p-adic) Stark's Conjectures"
 comment_issue_id: 6
+sub: "lfunctions"
 ---
 
 The goal of this post is to state some background and say what my thesis is about. In order to do this the post must be very technical, and I assume a high level of mathematical background. The reader has been warned. I will start out each section with a paragraph or two that gives an idea of what I'm talking about without needing much math background though. I also continue the narrative and build off of what I've introduced in previous posts.

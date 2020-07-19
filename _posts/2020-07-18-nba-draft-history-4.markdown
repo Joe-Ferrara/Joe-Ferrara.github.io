@@ -1,7 +1,8 @@
 ---
 layout: post
-title:  "NBA Draft History: Best and Worst Drafts, and Redraftables"
+title:  "Best and Worst Drafts, and Redraftables"
 comment_issue_id: ??
+sub: "draft"
 ---
 
 <style>

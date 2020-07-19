@@ -1,7 +1,8 @@
 ---
 layout: post
-title: "Introduction to L-functions V: Units and Real Quadratic Class Numbers"
+title: "Intro V: Units and Real Quadratic Class Numbers"
 comment_issue_id: 5
+sub: "lfunctions"
 ---
 
 Let $K = \mathbb Q(\sqrt{d})$ be a quadratic field and let $D$ be its discriminant. In my last post I analyzed the units of $K$ when $d < 0$ and used the formula for $L(\chi_D, 1)$ to calculate class numbers for $K$ when $\left\lvert d\right\rvert<100.$ In this post, I'll do the same analysis when $d > 0$.

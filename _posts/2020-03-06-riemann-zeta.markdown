@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Introduction to L-functions I: Riemann Zeta Function"
+title:  "Intro I: Riemann Zeta Function"
 comment_issue_id: 1
-sub: "Yes"
+sub: "lfunctions"
 ---
 
 # The Riemann zeta Function

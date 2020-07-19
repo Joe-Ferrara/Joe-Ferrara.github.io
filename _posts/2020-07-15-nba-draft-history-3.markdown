@@ -1,7 +1,8 @@
 ---
 layout: post
-title:  "NBA Draft History: Best Colleges at Producing NBA Players"
+title:  "Best Colleges at Producing NBA Players"
 comment_issue_id: 17
+sub: "draft"
 ---
 
 <style>

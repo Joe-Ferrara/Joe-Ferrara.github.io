@@ -1,7 +1,8 @@
 ---
 layout: post
-title:  "Coding Theory: The Hamming Code"
+title:  "The Hamming Code"
 comment_issue_id: 8
+sub: "coding"
 ---
 
 # Parity Check Matrix
