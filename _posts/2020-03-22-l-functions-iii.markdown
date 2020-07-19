@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Intro III: Quadratic Fields"
+title: "Quadratic Fields"
 comment_issue_id: 3
 sub: "lfunctions"
 ---

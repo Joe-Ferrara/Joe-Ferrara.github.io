@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Intro IV: Units and Imaginary Quadratic Class Numbers"
+title: "Imaginary Quadratic Fields: Units and Class Numbers"
 comment_issue_id: 4
 sub: "lfunctions"
 ---

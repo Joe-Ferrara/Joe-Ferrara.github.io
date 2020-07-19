@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Intro II: L-series and Class Number Formula"
+title:  "L-series and The Class Number Formula"
 comment_issue_id: 2
 sub: "lfunctions"
 ---

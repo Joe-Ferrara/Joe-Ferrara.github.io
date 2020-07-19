@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Intro VI: (p-adic) Stark's Conjectures"
+title: "(p-adic) Stark's Conjectures"
 comment_issue_id: 6
 sub: "lfunctions"
 ---

@@ -31,8 +31,8 @@ layout: default
     </ul>
 
     <h1 class="draft">NBA Draft History</h1>
-    <ul class="draft-list">
-      {%- for post in site.posts -%}
+    <ul class="draft-list" style="list-style: none;">
+      {%- for post in site.posts reversed -%}
         {%- if post.sub == "draft" -%}
           <li>
             {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
@@ -51,8 +51,8 @@ layout: default
     </ul>
 
     <h1 class="betting">Betting with Machine Learning</h1>
-    <ul class="betting-list">
-      {%- for post in site.posts -%}
+    <ul class="betting-list" style="list-style: none;">
+      {%- for post in site.posts reversed -%}
         {%- if post.sub == "betting" -%}
           <li>
             {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
@@ -71,8 +71,8 @@ layout: default
     </ul>
 
     <h1 class="coding">Coding Theory</h1>
-    <ul class="coding-list">
-      {%- for post in site.posts -%}
+    <ul class="coding-list" style="list-style: none;">
+      {%- for post in site.posts reversed -%}
         {%- if post.sub == "coding" -%}
           <li>
             {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
@@ -91,8 +91,8 @@ layout: default
     </ul>
 
     <h1 class="lfunctions">Introduction to L-Functions</h1>
-    <ul class="lfunctions-list">
-      {%- for post in site.posts -%}
+    <ul class="lfunctions-list"  style="list-style: none;">
+      {%- for post in site.posts reversed -%}
         {%- if post.sub == "lfunctions" -%}
           <li>
             {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
@@ -110,7 +110,7 @@ layout: default
       {%- endfor -%}
     </ul>
 
-    <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+    <!-- <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p> -->
   {%- endif -%}
 
 </div>

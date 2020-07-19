@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Intro I: Riemann Zeta Function"
+title:  "The Riemann Zeta Function"
 comment_issue_id: 1
 sub: "lfunctions"
 ---

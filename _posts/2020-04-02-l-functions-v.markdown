@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Intro V: Units and Real Quadratic Class Numbers"
+title: "Real Quadratic Fields: Units and Class Numbers"
 comment_issue_id: 5
 sub: "lfunctions"
 ---
