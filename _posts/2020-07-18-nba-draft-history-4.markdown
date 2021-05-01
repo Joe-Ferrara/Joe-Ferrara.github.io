@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Best and Worst Drafts, and Redraftables"
-comment_issue_id: ??
+comment_issue_id: 18
 sub: "draft"
 ---
 
