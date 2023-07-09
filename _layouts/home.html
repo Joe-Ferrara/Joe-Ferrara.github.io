@@ -12,10 +12,30 @@ layout: default
   {%- if site.posts.size > 0 -%}
     <!-- <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2> -->
 
-    <h1 class="betting">Predicting NBA Games</h1>
-    <ul class="betting-list" style="list-style: none;">
+    <!-- <h1 class="miscellaneous">Miscellaneous</h1> -->
+    <ul class="post-list">
+      {%- for post in site.posts -%}
+        {%- if post.sub == "none" -%}
+          <li>
+            {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+            <span class="post-meta">{{ post.date | date: date_format }}</span>
+            <h3>
+              <a class="post-link" href="{{ post.url | relative_url }}">
+                {{ post.title | escape }}
+              </a>
+            </h3>
+            {%- if site.show_excerpts -%}
+              {{ post.excerpt }}
+            {%- endif -%}
+          </li>
+        {%- endif -%}
+      {%- endfor -%}
+    </ul>
+
+    <h1 class="draft">NBA Draft History</h1>
+    <ul class="draft-list" style="list-style: none;">
       {%- for post in site.posts reversed -%}
-        {%- if post.sub == "betting" -%}
+        {%- if post.sub == "draft" -%}
           <li>
             {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
             <span class="post-meta">{{ post.date | date: date_format }}</span>
@@ -32,10 +52,10 @@ layout: default
       {%- endfor -%}
     </ul>
 
-    <h1 class="draft">NBA Draft History</h1>
-    <ul class="draft-list" style="list-style: none;">
+    <h1 class="betting">Predicting NBA Games</h1>
+    <ul class="betting-list" style="list-style: none;">
       {%- for post in site.posts reversed -%}
-        {%- if post.sub == "draft" -%}
+        {%- if post.sub == "betting" -%}
           <li>
             {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
             <span class="post-meta">{{ post.date | date: date_format }}</span>
@@ -84,26 +104,6 @@ layout: default
                 {{ post.title | escape }}
               </a>
             </p>
-            {%- if site.show_excerpts -%}
-              {{ post.excerpt }}
-            {%- endif -%}
-          </li>
-        {%- endif -%}
-      {%- endfor -%}
-    </ul>
-
-    <h1 class="miscellaneous">Miscellaneous</h1>
-    <ul class="post-list">
-      {%- for post in site.posts -%}
-        {%- if post.sub == "none" -%}
-          <li>
-            {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-            <span class="post-meta">{{ post.date | date: date_format }}</span>
-            <h3>
-              <a class="post-link" href="{{ post.url | relative_url }}">
-                {{ post.title | escape }}
-              </a>
-            </h3>
             {%- if site.show_excerpts -%}
               {{ post.excerpt }}
             {%- endif -%}
