@@ -6,7 +6,7 @@ permalink: /research/
 
 # Papers
 
-* **An Equivariant Tamagawa Number Formula for Drinfeld Modules and Applications** (with  Nathan Green, Zach Higgins, and Cristian D. Popescu), Algebra & Number Theory, *to appear* [[arXiv](https://arxiv.org/abs/2004.05144)]
+* **An Equivariant Tamagawa Number Formula for Drinfeld Modules and Applications** (with  Nathan Green, Zach Higgins, and Cristian D. Popescu), Algebra & Number Theory, Vol. 16 (2022), No. 9, 2215–2264 [[arXiv](https://arxiv.org/abs/2004.05144)]
 
 * **A p-adic Stark conjecture in the rank one setting**, Acta Arithmetica **193** (2020), 369-417 [[arXiv](https://arxiv.org/abs/1904.10561)][[GitHub](https://github.com/Joe-Ferrara/p-adicStarkExamples)]
 
