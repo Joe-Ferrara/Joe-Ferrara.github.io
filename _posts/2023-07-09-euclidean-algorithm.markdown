@@ -1,7 +1,6 @@
 ---
 layout: post
 title: "Euclidean Algorithm"
-comment_issue_id: 21
 sub: "none"
 ---
 
