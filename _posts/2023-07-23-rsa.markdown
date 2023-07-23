@@ -1,0 +1,72 @@
+---
+layout: post
+title: "RSA"
+sub: "none"
+
+---
+
+RSA<sup>[1](#1)</sup>, or more generally the process of encryption, is usually told with the characters Alice and Bob. Alice wants to send a secret to Bob over an insecure channel where the secret might be intercepted. To send the message securely Alice encrypts the message in such a way that it is near impossible to decrypt if intercepted. Bob, waiting for the encrypted message has the tools to decrypt it. The way this works with RSA is surprising because Bob tells the world how to encrypt a message to send to him securely, and so anyone can send him a secure message, not just Alice. Bob knows how to decrypt any message using a secret key that he created when he created the method of encryption. Only someone with the secret key can decrypt the message, and the magic of RSA is that it's computationally infeasible to figure out the secret key from the encryption method.
+
+## Encryption and Decryption and the Math for Why it Works
+
+RSA works by making strategic choices of a few numbers, and then taking advantage of modular arithmetic rules. First, and this is the key to why it's so hard to decrypt an RSA encrypted message without the secret key, you chose two large (and I mean large like 100 digits large) prime numbers $p$ and $q$ and let $n = pq$. The number $n$ is the modulus for the modular arithmetic we'll do.
+
+Let $\varphi(n)$ be the number of positive integers less than $n$ that are coprime to $n$. The function $\varphi$ is called [Euler's totient function](https://en.wikipedia.org/wiki/Euler%27s_totient_function), and the properties of $\varphi(n)$ play an important role for us. As explained in my previous post on the [Euclidean algorithm](https://joe-ferrara.github.io/2023/07/09/euclidean-algorithm.html), the number of positive integers less than $n$ that are coprime to $n$ is the number of residue classes modulo $n$ that have a multiplicative inverse. In other words, $\varphi(n)$ is the number of positive integers, $x$, less than $n$ such that there exists a positive integer $y$, also less than $n$ such that 
+
+$$xy \equiv 1 \bmod n.$$
+
+It's a theorem in modular arithmetic, that for any integer $a$ coprime to $n$,
+
+$$a^{\varphi(n)}\equiv 1 \bmod n.$$
+
+This theorem is known as [Euler's theorem](https://en.wikipedia.org/wiki/Euler%27s_theorem), and is one of two theorems from modular arithmetic I will use in this post without explaining how to prove<sup>[2](#2)</sup>.
+
+So we've made our strategic choice of $p$ and $q$, and now that we know about $\varphi(n)$, we make our next strategic choice. Choose a positive integer $e$ such that $e$ is coprime to $\varphi(n)$. What does this choice of $e$ give us? Well, because $e$ is coprime to $\varphi(n)$, there exists  positive integers $d$ and $k$ such that
+$$
+ed + k\varphi(n) = 1, \label{ref1}\tag{1}
+$$
+which is again from the [Euclidean algorithm](https://joe-ferrara.github.io/2023/07/09/euclidean-algorithm.html). Then, using equation $(\ref{ref1})$ in the exponent and applying Euler's theorem, we get for any integer $a$ coprime to $n$,
+
+$$a = a^{1} = a^{ed + k\varphi(n)} = a^{ed}a^{k\varphi(n)} \equiv a^{ed} \bmod n,$$
+
+which says that $a^{ed}\equiv a\bmod n$. The equation $a^{ed}\equiv a\bmod n$ is how RSA encoding and decoding works. The number $e$ is called the encoding exponent and the number $d$ is called the decoding exponent. The number $d$ is defined by equation $(\ref{ref1})$, which means $d$ is not strictly speaking unique given $e$. But, viewing $d$ as the multiplicative inverse of $e$ modulo $\varphi(n)$, we can choose $d$ as the unique positive integer less than $\varphi(n)$ such that $ed\equiv 1 \bmod \varphi(n)$.
+
+We define the encoding function $E$ as $E(x) = x^e$ and the decoding function $D$ as $D(y) = y^d$. We've shown (modulo Euler's theorem), that for integers $a$ that are coprime to $n$, $D(E(a)) \equiv a \bmod n$. Therefore if Alice wants to send a message, $a$, to Bob that is less than and coprime to $n$, she can do so by sending $E(a) = a^e$. Bob can then decode the message by calculating $D(E(a)) = a^{ed} \equiv a\bmod n$. We'll discuss more later why Bob can tell the whole world $e$ and $n$ and why the world cannot calculate $d$. But for now, you're probably wondering, about the $a$'s that are not coprime to $n$.
+
+It turns out that it is also true that $a^{ed} \equiv a\bmod n$ for all $a$'s, not just those coprime to $n$. To see this, we need more information about $\varphi(n)$. Recall that $n = pq$ and $\varphi(n)$ is the number of positive integers less than $n$ that are coprime to $n$. Let's calculate $\varphi(pq)$ in terms of $p$ and $q$. The only positive integers less than $pq$ that are not coprime to $pq$ are the multiples of $p$ and the multiples of $q$. There are $q - 1$ multiples of $p$ less than $pq$, and there are $p - 1$ multiples of $q$ less than $pq$. Therefore the number of positive integers less than $pq$ that are coprime to $pq$ are the number of numbers less than $pq$, which is $pq - 1$, minus the $q - 1$ multiples of $p$ minus the $p - 1$ multiples of $q$. In other words
+
+$$\varphi(pq) = pq - 1 - (p - 1) - (q - 1)  = pq - p - q + 1 = (p - 1)(q - 1).$$
+
+The equation $\varphi(pq) = (p - 1)(q - 1)$ is what we need. We also need that for a prime number $p$, $\varphi(p) = p - 1$. This follows from the definition of a prime number, as for a prime number $p$, every positive integer less than $p$ is coprime to $p$.
+
+Finally, we also need to use the [Chinese Remainder Theorem](https://en.wikipedia.org/wiki/Chinese_remainder_theorem). The Chinese Remainder theorem is the second and final theorem from modular arithmetic that we need to use without explanation. The Chinese Remainder theorem in this context says that 
+
+$$x \equiv y \bmod n $$
+
+if and only if
+
+$$x \equiv y \bmod p \text{ and } x \equiv y\bmod q.$$ 
+
+What this means for us is that we can show the congruence $a^{ed}\equiv a\bmod n$  is true by showing that $a^{ed}\equiv a\bmod p$ is true and $a^{ed}\equiv a\bmod q$ is true. Let $a$ be an integer that is not coprime to $n$. Then there are three possible cases for how $a$ can be divisible by $p$ and $q$.
+
+1. $a$ is divisible by $p$ and $q$ (so divisible by $n$). In this case both $a^{ed}$ and $a$ are both $0\bmod n$.
+2. $a$ is divisible by $p$ and not divisible by $q$. In this case $a$ and $a^{ed}$ are both $0\bmod p$. Let's now look $\bmod q$. Because $a$ is not divisible by $q$, both $a$ and $a^{ed}$ are coprime to $q$, and so by $(\ref{ref1})$, $a = a^1 = a^{ed + k\varphi(n)} = a^{ed}a^{k\varphi(n)}$. Then because $\varphi(n) = (p - 1)(q - 1)$, $\varphi(q) = q - 1$, and Euler's theorem applied modulo $q$, we have $a^{k\varphi(n)} = (a^{\varphi(q)})^{(p - 1)k}\equiv 1\bmod q$. Putting these strings of equivalences together gives $a\equiv a^{ed}\bmod q$. Which shows that $a\equiv a^{ed}\bmod n$.
+3. a is divisible by $q$ and not by $p$. By symmetry we can make the same argument here that we did in case 2, switching the role of $p$ and $q$.
+
+Boom, by a classic winding and confusing math proof argument, we've show that if $a$ is not coprime to $n$ then it is still true that $a^{ed} \equiv a\bmod n$. Now you know why I started with the case of $a$ coprime to $n$ first. We now have that for all integers $a$, $a^{ed}\equiv a\bmod n$.<sup>[3](#3)</sup>
+
+## Why Can't an Attacker Figure Out $d$?
+
+In terms of Alice and Bob, RSA works by Bob choosing $p, q$, and $e$ and then calculates $d$. Bob holds onto $d$ and keeps it a secret, as it is the secret key. Bob multiplies $p$ and $q$ together to get $n = pq$, and then Bob tells the world $n$ and $e$. He says, "Anyone can send me a message that's a positive integer less than $n$. To send me a message, $a$, using the encoding exponent $e$ to calculate $a^{e}\bmod $n and then send me the residue class of $a^e\bmod n$ that is less than $n$. I'll be able to determine your message $a$ and no one who intercepts the encrypted message $a^e\bmod n$ will be able to determine $a$."
+
+Let's think about this from the attacker's perspective to see why the attacker cannot figure out $a$ from $a^e\bmod n$. If you're the attacker, then you know that $n = pq$ for some $p$ and $q$ and you know that the decoding exponent is an integer $d$ such that $ed \equiv 1 \bmod \varphi(n)$ because you know that Bob is using RSA. The primes $p$ and $q$ are huge, so the number $n$ is huge. Calculating $\varphi(n)$ directly from it's definition by counting the number of integers less than $n$ that are coprime to $n$ is computationally expensive to the point that it would literally take forever to do. *If* you know $p$ and $q$, then calculating $\varphi$(n) would be easy because $\varphi(n) = (p -1)(q - 1)$ and multiplying too large numbers is computationally cheap. This is the crux of the issue. Multiplying $p$ and $q$ to get $n = pq$ is computationally inexpensive, but determining $p$ and $q$ from $n$ is computational expensive to the point that it takes literally forever to do. There are no computationally reasonable algorithms to determine $p$ and $q$ from $n$, and that is why RSA works.
+
+## How and Where is RSA Used?
+
+RSA is used in a lot of places. The story told in most mathematics classes about where RSA is used is that it's used to send credit card numbers over the web when you buy stuff online. Let's say Matt wants to buy something at buycoolstuff.com with his Wells Fargo credit card. Wells Fargo runs a server that buycoolstuff.com sends a request to saying I have a customer with a Wells Fargo credit that wants to buy something. Wells Fargo then sends buycoolstuff.com the encoding exponent $e$ and the modulus $n$, which buycoolstuff.com uses to encode Matt's credit card number. The encoded credit card number is sent to Wells Fargo's server along with information about the transaction including how much to charge the credit card. Wells Fargo decodes the credit card number and does whatever logic needs to be done to charge the credit card and sends back to buycoolstuff.com whether the transaction is a success.
+
+<a name="1"><sup>1</sup></a> I'd be remiss if I did not mention that RSA stands for Rivest–Shamir–Adleman the last names of the three Professors Ron Rivest, Adi Shamir, and Leonard Adleman who came up with the algorithm while together at MIT.
+
+<a name="2"><sup>2</sup></a> Euler's theorem can be seen as true from the fact that the set of residue classes $\bmod n$ that are coprime to $n$ form a group of size $\varphi(n)$ under multiplication, but if you understand why this proves Euler's theorem, then you probably already know about Euler's theorem in the first place.
+
+<a name="3"><sup>3</sup></a> An interesting aspect of this whole line or reasoning is that when working $\bmod n$, we do arithmetic in the exponent working $\bmod \varphi(n)$.
